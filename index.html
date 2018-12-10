@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction | Sarawak E-Commerce Association</title>
+    <noscript>
+        <style>#mainBody { display:none; }</style>
+    </noscript>
+    <link rel="stylesheet" href="https://www.seca.org.my/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.seca.org.my/assets/icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.seca.org.my/assets/dataTables/datatables.min.css">
+    <link rel="stylesheet" href="https://www.seca.org.my/assets/fancybox/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="https://www.seca.org.my/assets/datepicker/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" href="https://www.seca.org.my/assets/confirmjs/jquery-confirm.min.css">
+    <link rel="icon" type="image/png" href="https://www.seca.org.my/assets/img/SECA_SQ_LOGO.png">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.seca.org.my/assets/pace/pace.min.js"></script>
+    <link rel="stylesheet" href="https://www.seca.org.my/assets/pace/pace-theme-flat-top.css">
+    <style>
+    /*Overwrite*/
+    .header-sticky
+    {
+      z-index: 3;
+      background: #FFF;
+      position: -webkit-sticky;
+      position: sticky;
+      top: -1px;
+    }
+    #ul-menu
+    {
+        width: 100%;
+        font-size: 16px;
+    }
+    #ul-menu li.nav-item
+    {
+        text-align: center;
+    }
+    .countdown {
+        padding: 20px 0px;
+        text-align: center;
+        line-height: 40px;
+    }
+    .countdown span{
+        font-size: 36px;
+    }
+    .parallax-content h1
+    {
+        font-size: 90px;
+    }
+    .btnRegister
+    {
+        position: fixed;
+        width: 320px;
+        margin-left: -160px;
+        left: 50%;
+        bottom: 20px;
+        text-align: center;
+        z-index:10;
+    }
+    .btnRegister div.bg_blur
+    {
+      border-radius: 16px;
+      background-color: rgba(255,255,255,0.16);
+      position: absolute;
+      width: 100%;
+      height: 50px;
+      bottom: -3px;
+      z-index: -1;
+      filter: drop-shadow(8px 8px 10px black);
+    }
+    .home_logo_container
+    {
+      position: relative;
+    }
+    .home_logo_xl
+    {
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      right: auto;
+      margin-left: -100px;
+      width: 180px;
+    }
+
+
+    .ball {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #FF5722;
+
+      animation: bounce 0.5s;
+      animation-direction: alternate;
+      animation-timing-function: cubic-bezier(.5,0.05,1,.5);
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes bounce {
+      from { transform: translate3d(0, 0, 0);     }
+      to   { transform: translate3d(0, 200px, 0); }
+    }
+
+    /* Prefix Support */
+    ball {
+      -webkit-animation-name: bounce;
+      -webkit-animation-duration: 0.5s;
+      -webkit-animation-direction: alternate;
+      -webkit-animation-timing-function: cubic-bezier(.5,0.05,1,.5);
+      -webkit-animation-iteration-count: infinite;
+    }
+
+    @-webkit-keyframes bounce {
+      from { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+      to   { -webkit-transform: translate3d(0, 200px, 0); transform: translate3d(0, 200px, 0); }
+    }
+    </style>
+</head>
+<body id="mainBody"  style="visibility: hidden;">
+    <ul class="nav justify-content-between navbar-signup d-none">
+        <li class="nav-item">
+            <a class="nav-link text-dark trn" href="javascript:;">{register}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark trn" href="javascript:;">{login}</a>
+        </li>
+        <li class="nav-item dropdown dropleft">
+            <a class="nav-link text-dark dropdown-toggle trn" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{lang}</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item text-center" id="btnLangSwitcherBM" data-lang="bm" href="javascript:void(0);">Malaysia</a>
+                <a class="dropdown-item text-center" id="btnLangSwitcherEN" data-lang="en" href="javascript:void(0);">English</a>
+                <a class="dropdown-item text-center" id="btnLangSwitcherCN" data-lang="cn" href="javascript:void(0);">中文</a>
+            </div>
+        </li>
+    </ul>
+    <header class="header-sticky">
+        <nav class="navbar navbar-light navbar-expand-md">
+            <div class="container-fluid">
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <a class="d-block d-sm-block d-md-none d-none d-md-block d-lg-none" href="https://www.seca.org.my/introduction"><img style="width:64px;height:64px;" src="https://www.seca.org.my/assets/img/SECA_SQ_LOGO.png?1" /></a>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul id="ul-menu" class="nav navbar-nav d-flex " style="justify-content: space-evenly!important;">
+                        <li class="nav-item" role="presentation"><a class="nav-link trn" href="https://www.seca.org.my/intro">{intro}</a></li>
+                        <!--li class="nav-item" role="presentation"><a class="nav-link trn" href="https://www.seca.org.my/events">{schedule}</a></li-->
+                        <li class="nav-item" role="presentation" id="nav_home"><a class="nav-link home_logo_container animate_scale" href="https://www.seca.org.my/"><img id="home_logo_xl" class="home_logo_xl" src="https://www.seca.org.my/assets/img/head_logo.jpg?1" /></a></li>
+                        <!--li class="nav-item" role="presentation"><a class="nav-link trn" href="https://www.seca.org.my/members">{members}</a></li-->
+                        <li class="nav-item" role="presentation"><a class="nav-link trn" href="https://www.seca.org.my/contact">{contact}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="div-jumbotron" class="jumbotron mt-2" style="border-radius:0px;">
+        <!--h1 class="text-white">转型.成长</h1>
+        <p class="text-white">Transforming a Survival Mindset to a Thrive Mindset.</p-->
+    </div>
+<div class="container-fluid" style="overflow:hidden;max-height:350px;padding:0px;margin:30px 0px;display:none;">
+    <div class="row mb-5">
+        <div class="col">
+              <ul id="ul-menu-subheader" class="nav navbar-nav d-flex " style="justify-content: space-evenly!important;">
+                  <li class="nav-item" role="presentation"><a class="text-black nav-link" href="https://www.seca.org.my/"><span class="trn mr-1">{stories}</span><span class="badge badge-danger trn">{badge_new}</span></a></li>
+                  <li class="nav-item" role="presentation"><a class="text-black nav-link" href="https://www.seca.org.my/"><span class="trn">{courses_online}</span></a></li>
+                  <li class="nav-item" role="presentation"><a class="text-black nav-link" href="https://www.seca.org.my/"><span class="trn">{sponsors}</span></a></li>
+                  <li class="nav-item" role="presentation"><a class="text-black nav-link" href="https://www.seca.org.my/"><span class="trn">{courses_offline}</span></a></li>
+                  <li class="nav-item" role="presentation"><a class="text-black nav-link" href="https://www.seca.org.my/"><span class="trn mr-1">{shop}</span><span class="badge badge-danger trn">{badge_hot}</span></a></li>
+              </ul>
+        </div>
+    </div>
+</div>
+<div class="container article">
+  <div class="row">
+    <div class="col-md-6 col-xs-12">
+            <h1>About Us</h1>
+            <br/>
+            <p class="text-justify">On May 26, 2017, SECA (Sarawak E-commerce Association) license was officially endorsed by the government. Sarawak E-Commerce Association, a total of five goals, Education, create online and offline sharing platform, a digital government agencies and members of the bridge to provide business and employment opportunities and data collection.</p>
+            <p class="text-justify">SECA  will organize a variety of related courses and seminars to the public awareness of e-commerce education, and is committed to building a business platform in Sarawak and with the international business platform docking, held Sarawak e-commerce Expo, trade fairs , And with the government docking, to assist members to dialogue with the company to help the Government to implement the relevant policies to help members how to become cross-border electricity providers, to provide members of import and export tariffs and legal advice.</p>
+            <p class="text-justify">In the e-commerce under the initiative, SECA will create employment, entrepreneurs and investors, business opportunities between the cooperation. In addition, SECA will develop data collection and provision of features, so that members can in their own business can save more resources and more accurate delivery.</p>
+            <p class="text-justify">If you are Interested in becoming a member of the SECA, you may elect to pay RM50 or RM300 for permanent membership. Please contact Lawrence Siew (016-860-0089).</p>
+            <br/>
+            <h1>关于我们</h1>
+            <br/>
+            <p class="text-justify">2017年 5月 26日，砂拉越电子商务公会（ Sarawak E-commerce Association）执照由政府正式批注。砂拉越电子商务公会，共有五大创会目标，即教育，打造线上线下共享平台，成为数码政府机构与会员沟通桥梁，提供创业和就业机会及数据收集。</p>
+            <p class="text-justify">该公会将举办各种相关课程与座谈会，以对大众进行电子商务的认知教育，同时致力于打造属于砂拉越的电商平台并与国际电商平台的对接，举办砂拉越电子商务博览会，展销会，并与政府对接，协助会员与公司对话，协助政府落实相关政策，协助会员如何成为跨境电商，提供会员进出口关税与法令咨询等。</p>
+            <p class="text-justify">在电子商务的主张下，该公会也会打造就业者，创业者和投资者，商家之间的合作机会。此外，该公会将发展数据采集与提供的功能，让会员可以在自己的业务上更可以节省资源并做更精准的投放。</p>
+            <p class="text-justify">有意成为砂拉越电子商务公会的会员，可选择缴交50令吉年费或300令吉成为永久会员。请联系 Lawrence Siew （016-860-0089）</p>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <h1>OUR MISSION</h1>
+            <br/>
+            <h2>成为数码政府机构与会用沟通桥梁</h2>
+            <p class="text-justify">-与政府对接，协助会员与政府对话，并协助政府落实相关政策-协助会员如何成为跨界电商，提供会员进出口关税与法令等咨询</p>
+            <h2>打造上线下线共享平台</h2>
+            <p class="text-justify">-打造属于砂劳越的电商平台并与国际电商平台对接-举办砂劳越电子商务博览会/展销会</p>
+            <h2>提供创业/就业机会</h2>
+            <p class="text-justify">-打造就业这/创业者与投资者/商家之间的合作平台</p>
+            <h2>数据收集</h2>
+            <p class="text-justify">-数据采集/提供，让会员可以在自己的业务上可以更节省资源并作精准的投放</p>
+            <h2>教育</h2>
+            <p class="text-justify">-举办各种相关课程与座谈会</p>
+            <br/>
+            <div class="container-fluid" style="padding:0px;margin:30px 0px;">
+                <div class="row">
+                    <div class="col-12">
+                      <ul id="homeSlider">
+                            <!--li>
+                              <a href="#slide1"><img src="https://www.seca.org.my/assets/img/home/slide.1.jpg"></a>
+                            </li-->
+                            <li>
+                              <a href="#slide2"><img src="https://www.seca.org.my/assets/img/home/slide.2.jpg"></a>
+                            </li>
+                            <li>
+                              <a href="#slide3"><img src="https://www.seca.org.my/assets/img/home/slide.3.jpg"></a>
+                            </li>
+                            <li>
+                              <a href="#slide3"><img src="https://www.seca.org.my/assets/img/home/slide.4.jpg"></a>
+                            </li>
+                            <li>
+                              <a href="#slide3"><img src="https://www.seca.org.my/assets/img/home/slide.5.jpg"></a>
+                            </li>
+                            <!--li>
+                              <a href="#slide3"><img src="https://www.seca.org.my/assets/img/home/slide.6.jpg"></a>
+                            </li-->
+                            <li>
+                              <a href="#slide3"><img src="https://www.seca.org.my/assets/img/home/slide.7.jpg"></a>
+                            </li>
+                            <!--li>
+                              <a href="#slide3"><img src="https://www.seca.org.my/assets/img/home/slide.8.jpg"></a>
+                            </li-->
+                            <li>
+                              <a href="#slide3"><img src="https://www.seca.org.my/assets/img/home/slide.9.jpg"></a>
+                            </li>
+                            <li>
+                              <a href="#slide3"><img src="https://www.seca.org.my/assets/img/home/slide.10.jpg"></a>
+                            </li>
+                            <li>
+                              <a href="#slide3"><img src="https://www.seca.org.my/assets/img/home/slide.11.jpg"></a>
+                            </li>
+                            <li>
+                              <a href="#slide3"><img src="https://www.seca.org.my/assets/img/home/slide.12.jpg"></a>
+                            </li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://www.seca.org.my/assets/slippry-1.4.0/slippry.min.js"></script>
+<link rel="stylesheet" href="https://www.seca.org.my/assets/slippry-1.4.0/slippry.css">
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#homeSlider').slippry({
+      // general elements & wrapper
+      slippryWrapper: '<div class="sy-box pictures-slider" />', // wrapper to wrap everything, including pager
+      // options
+      adaptiveHeight: false, // height of the sliders adapts to current slide
+      captions: false, // Position: overlay, below, custom, false
+      // pager
+      pager: true,
+      // controls
+      controls: true,
+      autoHover: false,
+      // transitions
+      transition: 'horizontal', // fade, horizontal, kenburns, false
+      kenZoom: 150,
+      speed: 5000 // time the transition takes (ms)
+    });
+});
+</script>
+    <footer class="footer_background p-4">
+        <ul id="ul-menu-footer" class="nav navbar-nav d-flex " style="justify-content: space-evenly!important;">
+            <!--li class="nav-item" role="presentation"><a class="text-black nav-link trn" id="a_faq" target="_blank" href="https://www.seca.org.my/faq">{faq}</a></li-->
+            <li class="nav-item" role="presentation"><a class="text-black nav-link trn" id="a_tnc" href="javascript:;">{faq}</a></li>
+            <li class="nav-item" role="presentation"><a class="text-black nav-link trn" id="a_tnc" href="javascript:;">{tnc}</a></li>
+            <li class="nav-item" role="presentation"><a class="text-black nav-link trn" id="a_privacy" href="javascript:;">{privacy}</a></li>
+            <li class="nav-item" role="presentation"><a class="text-black nav-link trn" id="a_copyrights" href="javascript:;">{copyrights}</a></li>
+        </ul>
+    </footer>
+    <style>
+    html, body
+    {
+      	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+        min-width: 340px;
+        /*
+        background: #799F0C;
+        background-image: linear-gradient(to right top, #4c60e7, #009dff, #00c5dc, #66e2b3, #e0f6b0);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        */
+    }
+    #div-jumbotron
+    {
+        background-image: url('https://www.seca.org.my/assets/img/cover.webp');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 300px;
+        overflow: auto;
+        /*
+        background: #799F0C;
+        background-image: linear-gradient(to right top, #4c60e7, #009dff, #00c5dc, #66e2b3, #e0f6b0);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        min-height: 150px;
+        overflow: auto;
+        */
+    }
+    .navbar-signup
+    {
+        background: #FFF;
+        color: #000 !important;
+        padding: 5px 10px;
+        font-weight: bold;
+        /*
+        background: #799F0C;
+        background-image: linear-gradient(to right top, #4c60e7, #009dff, #00c5dc, #66e2b3, #e0f6b0);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        padding: 15px 10px;
+        font-weight: bold;
+        */
+    }
+    .navbar-toggler
+    {
+        border: 2px solid #000;
+        background-color: transparent;
+        padding: .55rem .55rem;
+        border-radius: 2.25rem;
+    }
+    main.page,
+    #myTableContainer,
+    #myTable
+    {
+        font-size: 0.8rem !important;
+    }
+    #mainPage
+    {
+        padding-top: 5rem !important;
+    }
+    label.error
+    {
+        color: red;
+    }
+    .navbar-light
+    {
+      /*
+      background: rgb(0,48,80) !important;
+      background: linear-gradient(180deg, rgba(0,48,80,1) 0%, rgba(0,48,80,1) 6%, rgba(0,38,68,1) 100%) !important;
+      */
+    }
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+    #ul-menu-subheader .nav-link,
+    #ul-menu-footer .nav-link
+    {
+      font-weight: bold !important;
+      font-size: 1rem !important;
+    }
+    #ul-menu-subheader .nav-item,
+    #ul-menu-footer .nav-item
+    {
+      text-align: center;
+    }
+    #ul-menu-subheader .nav-link:hover,
+    #ul-menu-subheader .nav-link:active,
+    #ul-menu-footer .nav-link:hover,
+    #ul-menu-footer .nav-link:active
+    {
+      color: #003050 !important;
+    }
+    #ul-menu-subheader .nav-link,
+    #ul-menu .nav-link
+    {
+      font-weight: bold !important;
+      font-size: 0.85rem !important;
+      color: black !important;
+      border-bottom: 3px solid transparent;
+    }
+    #ul-menu-subheader .nav-link:hover,
+    #ul-menu-subheader .nav-link:active,
+    #ul-menu .nav-link:hover,
+    #ul-menu .nav-link:active
+    {
+      color: #FD7E14 !important;
+      border-bottom: 3px solid #FFA500 !important;
+    }
+    #ul-menu-subheader .nav-link:hover::before,
+    #ul-menu-subheader .nav-link:active::before,
+    #ul-menu .nav-link:hover::before,
+    #ul-menu .nav-link:active::before
+    {
+      border-bottom: 3px solid #FEDB00 !important;
+    }
+    #div_home_introduction
+    {
+      padding-top: 140px;
+      background-image: url('https://www.seca.org.my/assets/img/design/introduction/home_banner3.jpg');
+      background-size:cover;
+    }
+    .footer_background
+    {
+      background: #799F0C;
+      background-image: linear-gradient(to right top, #4c60e7, #009dff, #00c5dc, #66e2b3, #e0f6b0);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 150px;
+      overflow: auto;
+    }
+    .footer_background a
+    {
+      color: #000 !important;
+      font-weight: bold;
+      margin: auto;
+      min-width: 90px;
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .footer_background a:hover
+    {
+      color: #FD7E14 !important;
+    }
+    #home_logo_container
+    {
+      display: none;
+    }
+    .responsive-image
+    {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: auto;
+    }
+
+
+    /* Smartphones (portrait and landscape) ----------- */
+    @media (min-width : 320px)
+    and (max-width : 480px) {
+        /* Styles */
+        #ul_step
+        {
+          zoom: 90%;
+        }
+    }
+
+    /* Smartphones (landscape) ----------- */
+    @media (min-width : 331px) {
+    /* Styles */
+        #home_logo_container
+        {
+          display: block;
+        }
+        #introduction_section_001
+        {
+            margin-top: 0px !important;
+        }
+        #introduction_section_001_copy
+        {
+          top: 250px !important;
+          right: 15px !important;
+          left: 30px !important;
+        }
+        #introduction_section_002_copy
+        {
+          top: 200px !important;
+          right: 15px !important;
+          left: 30px !important;
+        }
+        #div_home_introduction
+        {
+          /*background-position: center -70px !important;*/
+        }
+        #div_home_introduction_logo
+        {
+          right: auto !important;
+        }
+
+    }
+
+    /* Smartphones (portrait) ----------- */
+    @media (max-width : 330px) {
+    /* Styles */
+        #home_logo_container
+        {
+          display: block;
+        }
+        #introduction_section_001_copy
+        {
+          top: 250px !important;
+          right: 15px !important;
+          left: auto !important;
+        }
+        #introduction_section_002_copy
+        {
+          top: 200px !important;
+          right: 15px !important;
+          left: auto !important;
+        }
+
+    }
+
+    /* iPads (portrait and landscape) ----------- */
+    @media only screen
+    and (min-width : 768px)
+    and (max-width : 1024px) {
+    }
+    @media (min-width: 576px)
+    {
+      .navbar {
+        padding-top: 2.2rem;
+        padding-bottom: 2.2rem;
+        min-height: 150px;
+      }
+    }
+    /* iPads (landscape) ----------- */
+    @media only screen
+    and (min-width : 768px)
+    and (max-width : 1024px)
+    and (orientation : landscape) {
+    /* Styles */
+      #div_home_introduction_logo
+      {
+        right: 100px !important;
+      }
+      #home_logo_container
+      {
+        display: none !important;
+      }
+    }
+
+    /* iPads (portrait) ----------- */
+    @media only screen
+    and (min-width : 768px)
+    and (max-width : 1024px)
+    and (orientation : portrait) {
+    /* Styles */
+    }
+
+    /* Desktops and laptops ----------- */
+    @media (min-width : 1000px) {
+    /* Styles */
+        #introduction_section_001
+        {
+            margin-top: -100px !important;
+        }
+        #introduction_section_001_copy
+        {
+          top: 230px !important;
+          left: 30px !important;
+        }
+        #introduction_section_002_copy
+        {
+          top: 120px !important;
+          right: 15px !important;
+          left: auto !important;
+        }
+        #div_home_introduction_logo
+        {
+          right: 100px !important;
+        }
+        #ul-menu-subheader,
+        #ul-menu-footer
+        {
+          flex-direction: row;
+        }
+    }
+
+    /* Large screens ----------- */
+    @media only screen
+    and (min-width : 1824px) {
+    /* Styles */
+    }
+
+    /* iPhone 4 ----------- */
+    @media
+    only screen and (-webkit-min-device-pixel-ratio : 1.5),
+    only screen and (min-device-pixel-ratio : 1.5) {
+    /* Styles */
+    }
+
+
+
+
+
+    @media (max-width: 800px)
+    {
+        #home_logo_container
+        {
+          display: none !important;
+        }
+        div.container.countdown
+        {
+          display: none !important;
+        }
+    }
+    @media (max-width: 1000px)
+    {
+        #nav_home
+        {
+          display: none !important;
+        }
+    }
+    #div_home_introduction
+    {
+      animation: animatedBackground 4s ease-in-out infinite alternate;
+    }
+    @keyframes animatedBackground {
+      0%
+      {
+        background-position: 20% 0;
+      }
+      50%
+      {
+        background-position: 25% 0;
+      }
+      100%
+      {
+        background-position: 20% 0;
+      }
+      /*
+      from { background-position: 0 0; }
+      to { background-position: 60% 0; }
+      */
+    }
+    .animate_scale
+    {
+      animation: leaves 2s ease-in-out infinite alternate;
+      -webkit-animation: leaves 2s ease-in-out infinite alternate;
+    }
+    .animate_scale:hover
+    {
+      transform: scale(1.1);
+    }
+    @keyframes leaves {
+            0% {
+                transform: scale(1.0);
+                -webkit-transform: scale(1.0);
+            }
+            100% {
+                transform: scale(1.1);
+                -webkit-transform: scale(1.1);
+            }
+    }
+    </style>
+    <script src="https://www.seca.org.my/assets/dataTables/datatables.min.js"></script>
+    <script src="https://www.seca.org.my/assets/fancybox/jquery.fancybox.min.js"></script>
+    <script src="https://www.seca.org.my/assets/datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="https://www.seca.org.my/assets/jquery.sticky-kit.min.js"></script>
+    <script src="https://www.seca.org.my/assets/script.min.js"></script>
+    <script src="https://www.seca.org.my/assets/jquery.translate.js"></script>
+    <script src="https://www.seca.org.my/assets/lang-bm.js?1544402156"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+      // var options = {
+      //   classname: 'my-class',
+      //   id: 'loadingbar',
+      //   target: document.getElementById('loadingbar')
+      // };
+      // var nanobar = new Nanobar( options );
+      // nanobar.go( 30 ); // size bar 30%
+      // nanobar.go( 76 ); // size bar 76%
+      // nanobar.go(100); // size bar 100% and and finish
+
+
+        $('.lang-bm').hide();
+        $('.lang-en').hide();
+        var translator = $('body').translate({lang: "cn", t: dict}); //use English
+
+        $('#btnLangSwitcherBM').on('click', function(){
+          translator.lang("bm");
+          $('.lang-bm').show();
+          $('.lang-en').hide();
+          $('.lang-cn').hide();
+        });
+        $('#btnLangSwitcherEN').on('click', function(){
+          translator.lang("en");
+          $('.lang-bm').hide();
+          $('.lang-en').show();
+          $('.lang-cn').hide();
+        });
+        $('#btnLangSwitcherCN').on('click', function(){
+          translator.lang("cn");
+          $('.lang-bm').hide();
+          $('.lang-en').hide();
+          $('.lang-cn').show();
+        });
+
+
+
+
+        $('#btnLangSwitcher').on('click', function(){
+          var lang = $(this).data('lang');
+          if( lang == 'en' )
+          {
+            $('#btnLangSwitcher').data('lang','bm');
+            translator.lang("bm");
+            $('.lang-en').hide();
+            $('.lang-bm').show();
+            $('#a_faq').attr('href','https://www.seca.org.my/t/soalan-lazim-faq/');
+            $('#a_tnc').attr('href','https://www.seca.org.my/t/terma-dan-syarat/');
+            $('#a_copyrights').attr('href','https://www.seca.org.my/t/copyrights/');
+          }else{
+            $('#btnLangSwitcher').data('lang','en');
+            translator.lang("en");
+            $('.lang-bm').hide();
+            $('.lang-en').show();
+            $('#a_faq').attr('href','https://www.seca.org.my/t/faq/');
+            $('#a_tnc').attr('href','https://www.seca.org.my/t/tnc/');
+            $('#a_copyrights').attr('href','https://www.seca.org.my/t/copyrights/');
+          }
+        });
+        $('.btnLang-bm').on('click', function(){
+            $('#btnLangSwitcher').data('lang','bm');
+            translator.lang("bm");
+            $('.lang-en').hide();
+            $('.lang-bm').show();
+            $('#a_faq').attr('href','https://www.seca.org.my/t/faq-bm/');
+            $('#a_tnc').attr('href','https://www.seca.org.my/t/tnc-bm/');
+            $('#a_copyrights').attr('href','https://www.seca.org.my/t/copyrights-bm/');
+        });
+        $('.btnLang-en').on('click', function(){
+            $('#btnLangSwitcher').data('lang','en');
+            translator.lang("en");
+            $('.lang-bm').hide();
+            $('.lang-en').show();
+            $('#a_faq').attr('href','https://www.seca.org.my/t/faq/');
+            $('#a_tnc').attr('href','https://www.seca.org.my/t/tnc/');
+            $('#a_copyrights').attr('href','https://www.seca.org.my/t/copyrights/');
+        });
+        //$(".btnRegister").stick_in_parent();
+        var futsalAuthKey = getCookie("futsal_authKey");
+        if(futsalAuthKey !== "" && typeof futsalAuthKey !== "null")
+        { // prevent multiples request
+            // window.location = 'http://futsal.io/reg/new-team/'+futsalAuthKey;
+        }
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        // When everthing done loaded
+        $('#mainBody').fadeIn();
+        $('#mainBody').animate({opacity: 1}, 'fast', function(){
+            $('#mainBody').css('visibility', 'visible');
+        });
+    });
+    </script>
+    <script src="//code.tidio.co/hwubbpltzc2xojcsxpyrquyzhsgm5usp.js"></script>
+</body>
+</html>
