@@ -4,21 +4,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Introduction | Sarawak E-Commerce Association</title>
+  <title>Members | Sarawak E-Commerce Association</title>
   <noscript>
     <style>#mainBody { display:none; }</style>
   </noscript>
-  <link rel="stylesheet" href="https://www.seca.org.my/assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://www.seca.org.my/assets/icon/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://www.seca.org.my/assets/dataTables/datatables.min.css">
-  <link rel="stylesheet" href="https://www.seca.org.my/assets/fancybox/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="https://www.seca.org.my/assets/datepicker/bootstrap-datepicker3.min.css">
-  <link rel="stylesheet" href="https://www.seca.org.my/assets/confirmjs/jquery-confirm.min.css">
-  <link rel="icon" type="image/png" href="https://www.seca.org.my/assets/img/SECA_SQ_LOGO.png">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
-  <script src="https://www.seca.org.my/assets/pace/pace.min.js"></script>
-  <link rel="stylesheet" href="https://www.seca.org.my/assets/pace/pace-theme-flat-top.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <link rel="icon" type="image/png" href="SECA_SQ_LOGO.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/FeedEk/3.0.0/css/FeedEk.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FeedEk/3.0.0/js/FeedEk.min.js"></script>
   <style>
     @import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
     * {
@@ -33,7 +31,41 @@
     html {
       scroll-behavior: smooth;
     }
+    h1 {
+      color: #65737e;
+    }
+    h5 {
+      color: #4f5b66;
+
+    }
+    p, .text-dark {
+      color: #343d46;
+    }
+    .article p
+    {
+      font-size: 12px;
+    }
+    .article h5
+    {
+      font-size: 18px;
+    }
+    #mainBody { display:none; }
+    #back-top {
+        bottom: 20px;
+        position: fixed;
+        right: 25px;
+        z-index: 9;
+        color: #FFF;
+        background: #343d46;
+        padding: 5px;
+        border-radius: 3px;
+        text-decoration: none;
+    }
     /*Overwrite*/
+    #memberTable_wrapper
+    {
+      width: 100%;
+    }
     .header-sticky
     {
       z-index: 5;
@@ -51,39 +83,6 @@
     {
         text-align: center;
     }
-    .countdown {
-        padding: 20px 0px;
-        text-align: center;
-        line-height: 40px;
-    }
-    .countdown span{
-        font-size: 36px;
-    }
-    .parallax-content h1
-    {
-        font-size: 90px;
-    }
-    .btnRegister
-    {
-        position: fixed;
-        width: 320px;
-        margin-left: -160px;
-        left: 50%;
-        bottom: 20px;
-        text-align: center;
-        z-index:10;
-    }
-    .btnRegister div.bg_blur
-    {
-      border-radius: 16px;
-      background-color: rgba(255,255,255,0.16);
-      position: absolute;
-      width: 100%;
-      height: 50px;
-      bottom: -3px;
-      z-index: -1;
-      filter: drop-shadow(8px 8px 10px black);
-    }
     .home_logo_container
     {
       position: relative;
@@ -96,15 +95,6 @@
       right: auto;
       margin-left: -90px;
       max-width: 180px;
-    }
-    #back-top {
-        bottom: 20px;
-        position: fixed;
-        right: 25px;
-        z-index: 9;
-        color: #264d67;
-        padding: 5px;
-        border-radius: 3px;
     }
 
     .carousel {
@@ -130,10 +120,42 @@
         height: 400px;
       }
     }
+
+    .card {
+      color: #000;
+      border-radius: 4px;
+      margin: 20px auto;
+      position: relative;
+      padding: 30px;
+    }
+    .card:before {
+      content: "";
+      display: block;
+      position: absolute;
+      background-color: #FFF;
+      left: 20px;
+      right: 20px;
+      bottom: 0;
+      top: 50%;
+      z-index: -1;
+      box-shadow: 0 0 10px #999999;
+      transition: box-shadow 0.2s ease-in-out;
+    }
+    .card.level-3:hover:before {
+      box-shadow: 0 0 80px #999999;
+    }
+    .list-group-item
+    {
+      padding: 5px;
+    }
+    .list-group-item-light.list-group-item-action.active
+    {
+      background-color: #343d46;
+    }
     </style>
 </head>
 
-<body id="mainBody" style="visibility: hidden;">
+<body id="mainBody">
   <header class="header-sticky" id="navigation-lang">
   <ul class="nav justify-content-between navbar-signup">
     <li class="nav-item dropdown dropright">
@@ -144,26 +166,32 @@
         <a class="dropdown-item text-center" id="btnLangSwitcherCN" data-lang="cn" href="javascript:void(0);">中文</a>
       </div>
     </li>
+
+    <li class="nav-item  showOnScroll" role="presentation"><a class="nav-link text-dark" href="#intro"><i class=" mr-1 fas fa-landmark"></i><span class="trn">{intro}</span></a></li>
+    <li class="nav-item  showOnScroll" role="presentation"><a class="nav-link text-dark" href="#news"><i class=" mr-1 fas fa-newspaper"></i><span class="trn">{news}</span></a></li>
+    <li class="nav-item  showOnScroll" role="presentation"><a class="nav-link text-dark" href="#lists"><i class=" mr-1 fas fa-users"></i><span class="trn">{lists}</span></a></li>
+    <li class="nav-item  showOnScroll" role="presentation"><a class="nav-link text-dark" href="#contact"><i class=" mr-1 fas fa-headset"></i><span class="trn">{contact}</span></a></li>
+
     <li class="nav-item">
-      <a class="nav-link text-dark trn" href="http://bit.ly/SECA_NEW_MEMBER" target="_blank">{register}</a>
+      <a class="nav-link text-dark" href="http://bit.ly/SECA_NEW_MEMBER" target="_blank"><i class=" mr-1 fas fa-link"></i><span class="trn">{register}</span></a>
     </li>
-    <li class="nav-item d-none">
+    <!-- <li class="nav-item d-none">
       <a class="nav-link text-dark trn" href="javascript:;">{login}</a>
-    </li>
+    </li> -->
   </ul>
   </header>
   <header>
     <nav class="navbar navbar-light navbar-expand-md" id="navigation">
       <div class="container-fluid">
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-        <a class="d-block d-sm-block d-md-none d-none d-md-block d-lg-none" href="https://www.seca.org.my/introduction"><img style="width:64px;height:64px;" src="https://www.seca.org.my/assets/img/SECA_SQ_LOGO.png?1" /></a>
+        <a class="d-block d-sm-block d-md-none d-none d-md-block d-lg-none" href="javascript:;"><img style="width:64px;height:64px;" src="SECA_SQ_LOGO.png?1" /></a>
         <div class="collapse navbar-collapse" id="navcol-1">
           <ul id="ul-menu" class="nav navbar-nav d-flex " style="justify-content: space-evenly!important;">
-            <li class="nav-item" role="presentation"><a class="nav-link trn" href="#intro">{intro}</a></li>
-            <li class="nav-item" role="presentation"><a class="nav-link trn" href="#news">{news}</a></li>
-            <li class="nav-item" role="presentation" id="nav_home"><a class="nav-link home_logo_container" href="javascript:;"><img id="home_logo_xl" class="home_logo_xl" src="https://www.seca.org.my/assets/img/head_logo.jpg?1" /></a></li>
-            <li class="nav-item" role="presentation"><a class="nav-link trn" href="#lists">{lists}</a></li>
-            <li class="nav-item" role="presentation"><a class="nav-link trn" href="#contact">{contact}</a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link" href="#intro"><i class=" mr-1 fas fa-landmark"></i><span class="trn">{intro}</span></a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link" href="#news"><i class=" mr-1 fas fa-newspaper"></i><span class="trn">{news}</span></a></li>
+            <li class="nav-item" role="presentation" id="nav_home"><a class="nav-link home_logo_container" href="javascript:;"><img id="home_logo_xl" class="home_logo_xl" src="head_logo.jpg?1" /></a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link" href="#lists"><i class=" mr-1 fas fa-users"></i><span class="trn">{lists}</span></a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link" href="#contact"><i class=" mr-1 fas fa-headset"></i><span class="trn">{contact}</span></a></li>
           </ul>
         </div>
       </div>
@@ -171,15 +199,17 @@
   </header>
   <section class="jumbotron text-center" style="height:100vh;padding-top:120px;">
     <h1 class="text-center trn">{lists}</h1>
-    <div class="row" id="moderatorList"></div>
+    <div class="row" id="memberList"></div>
   </section>
   <footer class="footer_background p-4 d-none">
     <ul id="ul-menu-footer" class="nav navbar-nav d-flex " style="justify-content: space-evenly!important;">
+      <!--li class="nav-item" role="presentation"><a class="text-black nav-link trn" id="a_faq" target="_blank" href="https://www.seca.org.my/faq">{faq}</a></li-->
       <li class="nav-item" role="presentation"><a class="text-black nav-link trn" id="a_tnc" href="javascript:;">{tnc}</a></li>
       <li class="nav-item" role="presentation"><a class="text-black nav-link trn" id="a_privacy" href="javascript:;">{privacy}</a></li>
       <li class="nav-item" role="presentation"><a class="text-black nav-link trn" id="a_copyrights" href="javascript:;">{copyrights}</a></li>
     </ul>
   </footer>
+  <a href="javascript:void(0);" id="back-top" class="text-bold"><i class=" m-1 fas fa-arrow-up"></i></a>
   <a href="javascript:void(0);" id="back-top" class="text-bold">Top</a>
   <style>
     html, body
@@ -189,7 +219,7 @@
     }
     #div-jumbotron
     {
-        background-image: url('https://www.seca.org.my/assets/img/cover.webp');
+        background-image: url('cover.webp');
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -316,13 +346,14 @@
     {
       color: #FD7E14 !important;
     }
-    #home_logo_container
+    #home_logo_container, #back-top, .showOnScroll
     {
       display: none;
     }
     .responsive-image
     {
-      max-width: 360px;
+      max-width: 100%;
+      margin: 0px auto;
     }
     #navigation
     {
@@ -354,6 +385,10 @@
     /* Smartphones (landscape) ----------- */
     @media (min-width : 331px) {
     /* Styles */
+        #navigation
+        {
+          margin-top: 40px;
+        }
         #home_logo_container
         {
           display: block;
@@ -546,14 +581,33 @@
             }
     }
     </style>
-  <script src="https://www.seca.org.my/assets/dataTables/datatables.min.js"></script>
-  <script src="https://www.seca.org.my/assets/fancybox/jquery.fancybox.min.js"></script>
-  <script src="https://www.seca.org.my/assets/script.min.js"></script>
+    <script src="jquery.translate.js"></script>
+    <script src="lang-bm.js?1544402156"></script>
 
-  <script src="https://www.seca.org.my/assets/jquery.translate.js"></script>
-  <script src="lang-bm.js?1544402156"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
+
+      // Optimalisation: Store the references outside the event handler:
+      var $window = $(window);
+
+      function checkWidth() {
+          var windowsize = $window.width();
+          if (windowsize > 1000) {
+              // $('.showOnScroll').show();
+              return true;
+          }else{
+              // $('.showOnScroll').hide();
+              return false;
+          }
+      }
+      // Execute on load
+      var widthStatus = checkWidth();
+      // Bind event listener
+      $(window).resize(checkWidth);
+
 
       $('.lang-bm').hide();
       $('.lang-en').hide();
@@ -643,45 +697,58 @@
       }
       // When everthing done loaded
       $('#mainBody').fadeIn();
-      $('#mainBody').animate({
-        opacity: 1
-      }, 'fast', function() {
-        $('#mainBody').css('visibility', 'visible');
+      // $('#mainBody').animate({
+      //   opacity: 1
+      // }, 'fast', function() {
+      //   $('#mainBody').css('visibility', 'visible');
         setTimeout(function(){
-            renderModeratorList();
+            renderMemberList();
         }, 1000);
-      });
+      // });
       /* ========================================================================= */
       /*  Navigation background on scroll
       /* ========================================================================= */
       $(window).scroll(function() {
         if ($(document).scrollTop() > 100) {
-          $("#navigation").css("min-height", "50px");
-          $("#navigation-lang").addClass('nav-shadow');
-          $(".home_logo_xl").css({
-            "max-width": "100px",
-            "margin-left": "-50px",
-            "top": "-20px",
-          });
+          // $("#navigation").css("min-height", "50px");
+          // $("#navigation-lang").addClass('nav-shadow');
+          // $(".home_logo_xl").css({
+          //   "max-width": "100px",
+          //   "margin-left": "-50px",
+          //   "top": "-20px",
+          // });
         } else {
-          $("#navigation").css("min-height", "150px");
-          $("#navigation-lang").removeClass('nav-shadow');
-          $(".home_logo_xl").css({
-            "max-width": "180px",
-            "margin-left": "-90px",
-            "top": "-40px",
-          });
+          // $("#navigation").css("min-height", "150px");
+          // $("#navigation-lang").removeClass('nav-shadow');
+          // $(".home_logo_xl").css({
+          //   "max-width": "180px",
+          //   "margin-left": "-90px",
+          //   "top": "-40px",
+          // });
         }
       });
       /* ========================================================================= */
       /*	Back to Top
       /* ========================================================================= */
       $(window).scroll(function () {
-          if ($(window).scrollTop() > 200) {
-              $("#back-top").fadeIn(200)
+
+          if ($(window).scrollTop() > 200)
+          {
+              $("#back-top").fadeIn('fast');
           } else {
-              $("#back-top").fadeOut(200)
+              $("#back-top").fadeOut('fast');
           }
+          if( checkWidth() )
+          {
+            if ($(window).scrollTop() > 200)
+            {
+                $(".showOnScroll").fadeIn('fast');
+            } else {
+                $(".showOnScroll").fadeOut('fast');
+            }
+          }
+          // if (windowsize > 1000) {
+              // $('.showOnScroll').show();
       });
       $("#back-top").click(function () {
           $("html, body").stop().animate({
@@ -691,48 +758,66 @@
       /* ========================================================================= */
       /*	Section Gallery
       /* ========================================================================= */
-      var $carousel = $('.main-carousel').flickity({
-          prevNextButtons: false,
-          autoPlay: true,
-          autoPlay: 1500,
-          cellAlign: 'left',
-          contain: true,
-          wrapAround: true
-      });
+
 
     });
 
-        function renderModeratorList()
+        function renderMemberList()
         {
-        // https://docs.google.com/spreadsheets/d/1QIkOaouQPwc_P3PGXkXsccU_f9NZiqhYazqjMhGRuH4/edit?usp=sharing
+        // https://docs.google.com/spreadsheets/d/1QIkOaouQPwc_P3PGXkXsccU_f9NZiqhYazqjMhGRuH4/edit?usp=sharing // old sample
+        // https://docs.google.com/spreadsheets/d/1ItUmRMS0v8GjOqlqwgkGcEa0p34HDcBbNqTUD___dOk/edit#gid=0 // new sources
             // ID of the Google Spreadsheet
-            var spreadsheetID = "1QIkOaouQPwc_P3PGXkXsccU_f9NZiqhYazqjMhGRuH4";
+            var spreadsheetID = "1ItUmRMS0v8GjOqlqwgkGcEa0p34HDcBbNqTUD___dOk";
             var sheetID = "default"; // Get from XML retrieve
             var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/" + sheetID + "/public/values?alt=json";
 
             jQuery.getJSON(url, function(data) {
                 var entry = data.feed.entry;
+                var tempTable  = '<table class="table table-striped table-bordered" id="memberTable" width="100%">';
+                        tempTable += '<thead class="thead">';
+                            tempTable += '<tr>';
+                                tempTable += '<th scope="col">Member ID</th>';
+                                tempTable += '<th scope="col">Name</th>';
+                                tempTable += '<th scope="col">Company Name</th>';
+                                tempTable += '<th scope="col">Website</th>';
+                                tempTable += '<th scope="col">Contact</th>';
+                                tempTable += '<th scope="col">Email</th>';
+                            tempTable += '</tr>';
+                        tempTable += '</thead>';
+                    tempTable += '<tbody>';
+                var constructedhtml = '';
+
                 jQuery(entry).each(function()
                 {
-                //console.log( this );
+                // console.log( this );
                     var
-                    jobtitle = this.gsx$jobtitle.$t,
-                    roletitle = this.gsx$roletitle.$t,
-                    moderatorname = this.gsx$moderatorname.$t,
-                    quoteoftheday = this.gsx$quoteoftheday.$t,
-                    profileimageID = getParameterByName('id', this.gsx$profileimage.$t),
-                    profileimagelink = "https://drive.google.com/thumbnail?id=" + profileimageID,
-                    constructedhtml = '';
+                    memberID = this.gsx$memberid.$t,
+                    memberName = this.gsx$membername.$t,
+                    companyName = this.gsx$companyname.$t,
+                    website = this.gsx$website.$t,
+                    contact = this.gsx$contact.$t,
+                    email = this.gsx$email.$t;
+                    // profileimageID = getParameterByName('id', this.gsx$profileimage.$t),
+                    // profileimagelink = "https://drive.google.com/thumbnail?id=" + profileimageID;
+                    constructedhtml += '<tr>';  // constructedhtml += '<td class="text-center"><img src="'+profileimagelink+'" /></td>';
+                        constructedhtml += '<th scope="row">'+memberID+'</th>';
+                        constructedhtml += '<td class="bold">'+memberName+'</td>';
+                        constructedhtml += '<td class="bold">'+companyName+'</td>';
+                        constructedhtml += '<td class="card-text">'+website+'</td>';
+                        constructedhtml += '<td class="card-text text-muted">'+contact+'</td>';
+                        constructedhtml += '<td class="card-text text-muted">'+email+'</td>';
+                    constructedhtml += '</tr>';
 
-                    constructedhtml += '<div class="card col-sm-12 col-md-4 col-xl-2">';
-                        constructedhtml += '<p class="text-center"><img src="'+profileimagelink+'" /></p>';
-                        constructedhtml += '<p class="bold">'+moderatorname+'</p>';
-                        //constructedhtml += '<p class="card-text">'+roletitle+'</p>';
-                        //constructedhtml += '<p class="card-text text-muted">'+quoteoftheday+'</p>';
-                        constructedhtml += '<p class="card-text text-muted">'+jobtitle+'</p>';
-                    constructedhtml += '</div>';
-
-                    jQuery('#moderatorList').append(constructedhtml);
+                });
+                tempTable += constructedhtml;
+                tempTable += '</tbody>';
+                tempTable += '</table>';
+                // jQuery('#memberList').append(tempTable);
+                jQuery('#memberList').html(tempTable).promise().done(function(){
+                    //your callback logic / code here
+                    $('#memberTable').DataTable({
+                      "dom": '<f><"top"i>rt<"bottom"lp><"clear">'
+                    });
                 });
             });
         }
@@ -756,7 +841,7 @@
             for (i = 0; i < itemArray.length; i++) {
                 item += '<span class="d-inline bg-success text-white" style="padding:4px; margin:5px;border-radius:3px;">' + itemArray[i] + '</span>';
             }
-            //console.log('item',item);
+            console.log('item',item);
             return item;
         }
   </script>
