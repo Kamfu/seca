@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction | Sarawak E-Commerce Association</title>
+  <noscript>
+    <style>#mainBody { display:none; }</style>
+  </noscript>
+  <link rel="stylesheet" href="https://www.seca.org.my/assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.seca.org.my/assets/icon/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.seca.org.my/assets/dataTables/datatables.min.css">
+  <link rel="stylesheet" href="https://www.seca.org.my/assets/fancybox/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://www.seca.org.my/assets/datepicker/bootstrap-datepicker3.min.css">
+  <link rel="stylesheet" href="https://www.seca.org.my/assets/confirmjs/jquery-confirm.min.css">
+  <link rel="icon" type="image/png" href="https://www.seca.org.my/assets/img/SECA_SQ_LOGO.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://www.seca.org.my/assets/pace/pace.min.js"></script>
+  <link rel="stylesheet" href="https://www.seca.org.my/assets/pace/pace-theme-flat-top.css">
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Roboto", sans-serif;
+      /* box-shadow:
+          inset 0px 11px 8px -10px #CCC,
+          inset 0px -11px 8px -10px #CCC; */
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    /*Overwrite*/
+    .header-sticky
+    {
+      z-index: 5;
+      background: #FFF;
+      position: fixed;
+      top: 0px;
+      width: 100%;
+    }
+    #ul-menu
+    {
+        width: 100%;
+        font-size: 16px;
+    }
+    #ul-menu li.nav-item
+    {
+        text-align: center;
+    }
+    .countdown {
+        padding: 20px 0px;
+        text-align: center;
+        line-height: 40px;
+    }
+    .countdown span{
+        font-size: 36px;
+    }
+    .parallax-content h1
+    {
+        font-size: 90px;
+    }
+    .btnRegister
+    {
+        position: fixed;
+        width: 320px;
+        margin-left: -160px;
+        left: 50%;
+        bottom: 20px;
+        text-align: center;
+        z-index:10;
+    }
+    .btnRegister div.bg_blur
+    {
+      border-radius: 16px;
+      background-color: rgba(255,255,255,0.16);
+      position: absolute;
+      width: 100%;
+      height: 50px;
+      bottom: -3px;
+      z-index: -1;
+      filter: drop-shadow(8px 8px 10px black);
+    }
+    .home_logo_container
+    {
+      position: relative;
+    }
+    .home_logo_xl
+    {
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      right: auto;
+      margin-left: -90px;
+      max-width: 180px;
+    }
+    #back-top {
+        bottom: 20px;
+        position: fixed;
+        right: 25px;
+        z-index: 9;
+        color: #264d67;
+        padding: 5px;
+        border-radius: 3px;
+    }
+
+    .carousel {
+      background: #EEE;
+    }
+
+    .carousel img {
+      display: block;
+      height: 200px;
+    }
+
+    .carousel-cell p
+    {
+      padding: 5px;
+    }
+
+    .carousel-cell h5
+    {
+      padding: 5px;
+    }
+    @media screen and ( min-width: 768px ) {
+      .carousel img {
+        height: 400px;
+      }
+    }
+    </style>
+</head>
+
+<body id="mainBody" style="visibility: hidden;">
+  <header class="header-sticky" id="navigation-lang">
+  <ul class="nav justify-content-between navbar-signup">
+    <li class="nav-item dropdown dropright">
+      <a class="nav-link text-dark dropdown-toggle trn" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{lang}</a>
+      <div class="dropdown-menu">
+        <!-- <a class="dropdown-item text-center" id="btnLangSwitcherBM" data-lang="bm" href="javascript:void(0);">Malaysia</a> -->
+        <a class="dropdown-item text-center" id="btnLangSwitcherEN" data-lang="en" href="javascript:void(0);">English</a>
+        <a class="dropdown-item text-center" id="btnLangSwitcherCN" data-lang="cn" href="javascript:void(0);">中文</a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-dark trn" href="http://bit.ly/SECA_NEW_MEMBER" target="_blank">{register}</a>
+    </li>
+    <li class="nav-item d-none">
+      <a class="nav-link text-dark trn" href="javascript:;">{login}</a>
+    </li>
+  </ul>
+  </header>
+  <header>
+    <nav class="navbar navbar-light navbar-expand-md" id="navigation">
+      <div class="container-fluid">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <a class="d-block d-sm-block d-md-none d-none d-md-block d-lg-none" href="https://www.seca.org.my/introduction"><img style="width:64px;height:64px;" src="https://www.seca.org.my/assets/img/SECA_SQ_LOGO.png?1" /></a>
+        <div class="collapse navbar-collapse" id="navcol-1">
+          <ul id="ul-menu" class="nav navbar-nav d-flex " style="justify-content: space-evenly!important;">
+            <li class="nav-item" role="presentation"><a class="nav-link trn" href="#intro">{intro}</a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link trn" href="#news">{news}</a></li>
+            <li class="nav-item" role="presentation" id="nav_home"><a class="nav-link home_logo_container" href="javascript:;"><img id="home_logo_xl" class="home_logo_xl" src="https://www.seca.org.my/assets/img/head_logo.jpg?1" /></a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link trn" href="#lists">{lists}</a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link trn" href="#contact">{contact}</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <section class="jumbotron text-center" style="height:100vh;padding-top:120px;">
+    <h1 class="text-center trn">{lists}</h1>
+    <div class="row" id="moderatorList"></div>
+  </section>
+  <footer class="footer_background p-4 d-none">
+    <ul id="ul-menu-footer" class="nav navbar-nav d-flex " style="justify-content: space-evenly!important;">
+      <li class="nav-item" role="presentation"><a class="text-black nav-link trn" id="a_tnc" href="javascript:;">{tnc}</a></li>
+      <li class="nav-item" role="presentation"><a class="text-black nav-link trn" id="a_privacy" href="javascript:;">{privacy}</a></li>
+      <li class="nav-item" role="presentation"><a class="text-black nav-link trn" id="a_copyrights" href="javascript:;">{copyrights}</a></li>
+    </ul>
+  </footer>
+  <a href="javascript:void(0);" id="back-top" class="text-bold">Top</a>
+  <style>
+    html, body
+    {
+      	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+        min-width: 340px;
+    }
+    #div-jumbotron
+    {
+        background-image: url('https://www.seca.org.my/assets/img/cover.webp');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 300px;
+        overflow: auto;
+        /*
+        background: #799F0C;
+        background-image: linear-gradient(to right top, #4c60e7, #009dff, #00c5dc, #66e2b3, #e0f6b0);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        min-height: 150px;
+        overflow: auto;
+        */
+    }
+    .navbar-signup
+    {
+        background: #FFF;
+        color: #000 !important;
+        padding: 5px 10px;
+        font-weight: bold;
+        /*
+        background: #799F0C;
+        background-image: linear-gradient(to right top, #4c60e7, #009dff, #00c5dc, #66e2b3, #e0f6b0);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        padding: 15px 10px;
+        font-weight: bold;
+        */
+    }
+    .navbar-toggler
+    {
+        border: 2px solid #000;
+        background-color: transparent;
+        padding: .55rem .55rem;
+        border-radius: 2.25rem;
+    }
+    main.page,
+    #myTableContainer,
+    #myTable
+    {
+        font-size: 0.8rem !important;
+    }
+    #mainPage
+    {
+        padding-top: 5rem !important;
+    }
+    label.error
+    {
+        color: red;
+    }
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+    #ul-menu-subheader .nav-link,
+    #ul-menu-footer .nav-link
+    {
+      font-weight: bold !important;
+      font-size: 1rem !important;
+    }
+    #ul-menu-subheader .nav-item,
+    #ul-menu-footer .nav-item
+    {
+      text-align: center;
+    }
+    #ul-menu-subheader .nav-link:hover,
+    #ul-menu-subheader .nav-link:active,
+    #ul-menu-footer .nav-link:hover,
+    #ul-menu-footer .nav-link:active
+    {
+      color: #003050 !important;
+    }
+    #ul-menu-subheader .nav-link,
+    #ul-menu .nav-link
+    {
+      font-weight: bold !important;
+      font-size: 0.85rem !important;
+      color: black !important;
+      border-bottom: 3px solid transparent;
+    }
+    #ul-menu-subheader .nav-link:hover,
+    #ul-menu-subheader .nav-link:active,
+    #ul-menu .nav-link:hover,
+    #ul-menu .nav-link:active
+    {
+      color: #FD7E14 !important;
+      border-bottom: 3px solid #FFA500 !important;
+    }
+    #ul-menu-subheader .nav-link:hover::before,
+    #ul-menu-subheader .nav-link:active::before,
+    #ul-menu .nav-link:hover::before,
+    #ul-menu .nav-link:active::before
+    {
+      border-bottom: 3px solid #FEDB00 !important;
+    }
+    #div_home_introduction
+    {
+      padding-top: 140px;
+      background-image: url('https://www.seca.org.my/assets/img/design/introduction/home_banner3.jpg');
+      background-size:cover;
+    }
+    .footer_background
+    {
+      background: #799F0C;
+      background-image: linear-gradient(to right top, #4c60e7, #009dff, #00c5dc, #66e2b3, #e0f6b0);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      /* min-height: 150px; */
+      overflow: auto;
+    }
+    .footer_background a
+    {
+      color: #000 !important;
+      font-weight: bold;
+      margin: auto;
+      min-width: 90px;
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .footer_background a:hover
+    {
+      color: #FD7E14 !important;
+    }
+    #home_logo_container
+    {
+      display: none;
+    }
+    .responsive-image
+    {
+      max-width: 360px;
+    }
+    #navigation
+    {
+      margin-top: 20px;
+    }
+    #navigation,
+    .home_logo_xl
+    {
+      transition-property: width;
+      transition-duration: 2s;
+      transition-timing-function: linear;
+      transition-delay: 1s;
+    }
+    .nav-shadow
+    {
+      box-shadow: 0px 0px 15px 2px #AAA;
+    }
+
+    /* Smartphones (portrait and landscape) ----------- */
+    @media (min-width : 320px)
+    and (max-width : 480px) {
+        /* Styles */
+        #ul_step
+        {
+          zoom: 90%;
+        }
+    }
+
+    /* Smartphones (landscape) ----------- */
+    @media (min-width : 331px) {
+    /* Styles */
+        #home_logo_container
+        {
+          display: block;
+        }
+        #introduction_section_001
+        {
+            margin-top: 0px !important;
+        }
+        #introduction_section_001_copy
+        {
+          top: 250px !important;
+          right: 15px !important;
+          left: 30px !important;
+        }
+        #introduction_section_002_copy
+        {
+          top: 200px !important;
+          right: 15px !important;
+          left: 30px !important;
+        }
+        #div_home_introduction
+        {
+          /*background-position: center -70px !important;*/
+        }
+        #div_home_introduction_logo
+        {
+          right: auto !important;
+        }
+
+    }
+
+    /* Smartphones (portrait) ----------- */
+    @media (max-width : 330px) {
+    /* Styles */
+        #home_logo_container
+        {
+          display: block;
+        }
+        #introduction_section_001_copy
+        {
+          top: 250px !important;
+          right: 15px !important;
+          left: auto !important;
+        }
+        #introduction_section_002_copy
+        {
+          top: 200px !important;
+          right: 15px !important;
+          left: auto !important;
+        }
+
+    }
+
+    /* iPads (portrait and landscape) ----------- */
+    @media only screen
+    and (min-width : 768px)
+    and (max-width : 1024px) {
+    }
+    @media (min-width: 576px)
+    {
+      .navbar {
+        padding-top: 2.2rem;
+        padding-bottom: 2.2rem;
+        min-height: 150px;
+      }
+    }
+    /* iPads (landscape) ----------- */
+    @media only screen
+    and (min-width : 768px)
+    and (max-width : 1024px)
+    and (orientation : landscape) {
+    /* Styles */
+      #div_home_introduction_logo
+      {
+        right: 100px !important;
+      }
+      #home_logo_container
+      {
+        display: none !important;
+      }
+    }
+
+    /* iPads (portrait) ----------- */
+    @media only screen
+    and (min-width : 768px)
+    and (max-width : 1024px)
+    and (orientation : portrait) {
+    /* Styles */
+    }
+
+    /* Desktops and laptops ----------- */
+    @media (min-width : 1000px) {
+    /* Styles */
+        #introduction_section_001
+        {
+            margin-top: -100px !important;
+        }
+        #introduction_section_001_copy
+        {
+          top: 230px !important;
+          left: 30px !important;
+        }
+        #introduction_section_002_copy
+        {
+          top: 120px !important;
+          right: 15px !important;
+          left: auto !important;
+        }
+        #div_home_introduction_logo
+        {
+          right: 100px !important;
+        }
+        #ul-menu-subheader,
+        #ul-menu-footer
+        {
+          flex-direction: row;
+        }
+    }
+
+    /* Large screens ----------- */
+    @media only screen
+    and (min-width : 1824px) {
+    /* Styles */
+    }
+
+    /* iPhone 4 ----------- */
+    @media
+    only screen and (-webkit-min-device-pixel-ratio : 1.5),
+    only screen and (min-device-pixel-ratio : 1.5) {
+    /* Styles */
+    }
+
+    @media (max-width: 800px)
+    {
+        #home_logo_container
+        {
+          display: none !important;
+        }
+        div.container.countdown
+        {
+          display: none !important;
+        }
+    }
+    @media (max-width: 1000px)
+    {
+        #nav_home
+        {
+          display: none !important;
+        }
+    }
+    #div_home_introduction
+    {
+      animation: animatedBackground 4s ease-in-out infinite alternate;
+    }
+    @keyframes animatedBackground {
+      0%
+      {
+        background-position: 20% 0;
+      }
+      50%
+      {
+        background-position: 25% 0;
+      }
+      100%
+      {
+        background-position: 20% 0;
+      }
+      /*
+      from { background-position: 0 0; }
+      to { background-position: 60% 0; }
+      */
+    }
+    .animate_scale
+    {
+      animation: leaves 2s ease-in-out infinite alternate;
+      -webkit-animation: leaves 2s ease-in-out infinite alternate;
+    }
+    .animate_scale:hover
+    {
+      transform: scale(1.1);
+    }
+    @keyframes leaves {
+            0% {
+                transform: scale(1.0);
+                -webkit-transform: scale(1.0);
+            }
+            100% {
+                transform: scale(1.1);
+                -webkit-transform: scale(1.1);
+            }
+    }
+    </style>
+  <script src="https://www.seca.org.my/assets/dataTables/datatables.min.js"></script>
+  <script src="https://www.seca.org.my/assets/fancybox/jquery.fancybox.min.js"></script>
+  <script src="https://www.seca.org.my/assets/script.min.js"></script>
+
+  <script src="https://www.seca.org.my/assets/jquery.translate.js"></script>
+  <script src="lang-bm.js?1544402156"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $('.lang-bm').hide();
+      $('.lang-en').hide();
+      var translator = $('body').translate({
+        lang: "cn",
+        t: dict
+      }); //use English
+
+      $('#btnLangSwitcherBM').on('click', function() {
+        translator.lang("bm");
+        $('.lang-bm').show();
+        $('.lang-en').hide();
+        $('.lang-cn').hide();
+      });
+      $('#btnLangSwitcherEN').on('click', function() {
+        translator.lang("en");
+        $('.lang-bm').hide();
+        $('.lang-en').show();
+        $('.lang-cn').hide();
+      });
+      $('#btnLangSwitcherCN').on('click', function() {
+        translator.lang("cn");
+        $('.lang-bm').hide();
+        $('.lang-en').hide();
+        $('.lang-cn').show();
+      });
+
+
+      $('#btnLangSwitcher').on('click', function() {
+        var lang = $(this).data('lang');
+        if (lang == 'en') {
+          $('#btnLangSwitcher').data('lang', 'bm');
+          translator.lang("bm");
+          $('.lang-en').hide();
+          $('.lang-bm').show();
+          $('#a_faq').attr('href', 'https://www.seca.org.my/t/soalan-lazim-faq/');
+          $('#a_tnc').attr('href', 'https://www.seca.org.my/t/terma-dan-syarat/');
+          $('#a_copyrights').attr('href', 'https://www.seca.org.my/t/copyrights/');
+        } else {
+          $('#btnLangSwitcher').data('lang', 'en');
+          translator.lang("en");
+          $('.lang-bm').hide();
+          $('.lang-en').show();
+          $('#a_faq').attr('href', 'https://www.seca.org.my/t/faq/');
+          $('#a_tnc').attr('href', 'https://www.seca.org.my/t/tnc/');
+          $('#a_copyrights').attr('href', 'https://www.seca.org.my/t/copyrights/');
+        }
+      });
+      $('.btnLang-bm').on('click', function() {
+        $('#btnLangSwitcher').data('lang', 'bm');
+        translator.lang("bm");
+        $('.lang-en').hide();
+        $('.lang-bm').show();
+        $('#a_faq').attr('href', 'https://www.seca.org.my/t/faq-bm/');
+        $('#a_tnc').attr('href', 'https://www.seca.org.my/t/tnc-bm/');
+        $('#a_copyrights').attr('href', 'https://www.seca.org.my/t/copyrights-bm/');
+      });
+      $('.btnLang-en').on('click', function() {
+        $('#btnLangSwitcher').data('lang', 'en');
+        translator.lang("en");
+        $('.lang-bm').hide();
+        $('.lang-en').show();
+        $('#a_faq').attr('href', 'https://www.seca.org.my/t/faq/');
+        $('#a_tnc').attr('href', 'https://www.seca.org.my/t/tnc/');
+        $('#a_copyrights').attr('href', 'https://www.seca.org.my/t/copyrights/');
+      });
+      //$(".btnRegister").stick_in_parent();
+      var futsalAuthKey = getCookie("futsal_authKey");
+      if (futsalAuthKey !== "" && typeof futsalAuthKey !== "null") { // prevent multiples request
+        // window.location = 'http://futsal.io/reg/new-team/'+futsalAuthKey;
+      }
+
+      function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+      // When everthing done loaded
+      $('#mainBody').fadeIn();
+      $('#mainBody').animate({
+        opacity: 1
+      }, 'fast', function() {
+        $('#mainBody').css('visibility', 'visible');
+        setTimeout(function(){
+            renderModeratorList();
+        }, 1000);
+      });
+      /* ========================================================================= */
+      /*  Navigation background on scroll
+      /* ========================================================================= */
+      $(window).scroll(function() {
+        if ($(document).scrollTop() > 100) {
+          $("#navigation").css("min-height", "50px");
+          $("#navigation-lang").addClass('nav-shadow');
+          $(".home_logo_xl").css({
+            "max-width": "100px",
+            "margin-left": "-50px",
+            "top": "-20px",
+          });
+        } else {
+          $("#navigation").css("min-height", "150px");
+          $("#navigation-lang").removeClass('nav-shadow');
+          $(".home_logo_xl").css({
+            "max-width": "180px",
+            "margin-left": "-90px",
+            "top": "-40px",
+          });
+        }
+      });
+      /* ========================================================================= */
+      /*	Back to Top
+      /* ========================================================================= */
+      $(window).scroll(function () {
+          if ($(window).scrollTop() > 200) {
+              $("#back-top").fadeIn(200)
+          } else {
+              $("#back-top").fadeOut(200)
+          }
+      });
+      $("#back-top").click(function () {
+          $("html, body").stop().animate({
+              scrollTop: 0
+          }, 500, "linear")
+      });
+      /* ========================================================================= */
+      /*	Section Gallery
+      /* ========================================================================= */
+      var $carousel = $('.main-carousel').flickity({
+          prevNextButtons: false,
+          autoPlay: true,
+          autoPlay: 1500,
+          cellAlign: 'left',
+          contain: true,
+          wrapAround: true
+      });
+
+    });
+
+        function renderModeratorList()
+        {
+        // https://docs.google.com/spreadsheets/d/1QIkOaouQPwc_P3PGXkXsccU_f9NZiqhYazqjMhGRuH4/edit?usp=sharing
+            // ID of the Google Spreadsheet
+            var spreadsheetID = "1QIkOaouQPwc_P3PGXkXsccU_f9NZiqhYazqjMhGRuH4";
+            var sheetID = "default"; // Get from XML retrieve
+            var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/" + sheetID + "/public/values?alt=json";
+
+            jQuery.getJSON(url, function(data) {
+                var entry = data.feed.entry;
+                jQuery(entry).each(function()
+                {
+                //console.log( this );
+                    var
+                    jobtitle = this.gsx$jobtitle.$t,
+                    roletitle = this.gsx$roletitle.$t,
+                    moderatorname = this.gsx$moderatorname.$t,
+                    quoteoftheday = this.gsx$quoteoftheday.$t,
+                    profileimageID = getParameterByName('id', this.gsx$profileimage.$t),
+                    profileimagelink = "https://drive.google.com/thumbnail?id=" + profileimageID,
+                    constructedhtml = '';
+
+                    constructedhtml += '<div class="card col-sm-12 col-md-4 col-xl-2">';
+                        constructedhtml += '<p class="text-center"><img src="'+profileimagelink+'" /></p>';
+                        constructedhtml += '<p class="bold">'+moderatorname+'</p>';
+                        //constructedhtml += '<p class="card-text">'+roletitle+'</p>';
+                        //constructedhtml += '<p class="card-text text-muted">'+quoteoftheday+'</p>';
+                        constructedhtml += '<p class="card-text text-muted">'+jobtitle+'</p>';
+                    constructedhtml += '</div>';
+
+                    jQuery('#moderatorList').append(constructedhtml);
+                });
+            });
+        }
+        function getParameterByName(name, url)
+        {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        function imgLoad(image_url)
+        {
+            return image_url;
+        }
+        function ui_splitBlock(items)
+        {
+            var item = '',itemArray = items.split(',');
+            for (i = 0; i < itemArray.length; i++) {
+                item += '<span class="d-inline bg-success text-white" style="padding:4px; margin:5px;border-radius:3px;">' + itemArray[i] + '</span>';
+            }
+            //console.log('item',item);
+            return item;
+        }
+  </script>
+</body>
+
+</html>
