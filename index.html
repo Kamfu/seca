@@ -8,27 +8,69 @@
   <noscript>
     <style>#mainBody { display:none; }</style>
   </noscript>
-  <link rel="stylesheet" href="https://www.seca.org.my/assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://www.seca.org.my/assets/icon/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://www.seca.org.my/assets/dataTables/datatables.min.css">
-  <link rel="stylesheet" href="https://www.seca.org.my/assets/fancybox/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="https://www.seca.org.my/assets/datepicker/bootstrap-datepicker3.min.css">
-  <link rel="stylesheet" href="https://www.seca.org.my/assets/confirmjs/jquery-confirm.min.css">
-  <link rel="icon" type="image/png" href="https://www.seca.org.my/assets/img/SECA_SQ_LOGO.png">
 
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
-  <script src="https://www.seca.org.my/assets/pace/pace.min.js"></script>
-  <link rel="stylesheet" href="https://www.seca.org.my/assets/pace/pace-theme-flat-top.css">
+
+  <link rel="stylesheet" href="https://www.seca.org.my/assets/fancybox/jquery.fancybox.min.css">
+
+  <link rel="icon" type="image/png" href="https://www.seca.org.my/assets/img/SECA_SQ_LOGO.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/FeedEk/3.0.0/css/FeedEk.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FeedEk/3.0.0/js/FeedEk.min.js"></script>
   <style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Roboto", sans-serif;
+      /* box-shadow:
+          inset 0px 11px 8px -10px #CCC,
+          inset 0px -11px 8px -10px #CCC; */
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    h1 {
+      color: #65737e;
+    }
+    h5 {
+      color: #4f5b66;
+
+    }
+    p, .text-dark {
+      color: #343d46;
+    }
+    .article p
+    {
+      font-size: 16px;
+    }
+    .article h5
+    {
+      font-size: 20px;
+    }
+    #back-top {
+        bottom: 20px;
+        position: fixed;
+        right: 25px;
+        z-index: 9;
+        color: #FFF;
+        background: #343d46;
+        padding: 5px;
+        border-radius: 3px;
+        text-decoration: none;
+    }
     /*Overwrite*/
     .header-sticky
     {
-      z-index: 3;
+      z-index: 5;
       background: #FFF;
-      position: -webkit-sticky;
-      position: sticky;
-      top: -1px;
+      position: fixed;
+      top: 0px;
+      width: 100%;
     }
     #ul-menu
     {
@@ -38,39 +80,6 @@
     #ul-menu li.nav-item
     {
         text-align: center;
-    }
-    .countdown {
-        padding: 20px 0px;
-        text-align: center;
-        line-height: 40px;
-    }
-    .countdown span{
-        font-size: 36px;
-    }
-    .parallax-content h1
-    {
-        font-size: 90px;
-    }
-    .btnRegister
-    {
-        position: fixed;
-        width: 320px;
-        margin-left: -160px;
-        left: 50%;
-        bottom: 20px;
-        text-align: center;
-        z-index:10;
-    }
-    .btnRegister div.bg_blur
-    {
-      border-radius: 16px;
-      background-color: rgba(255,255,255,0.16);
-      position: absolute;
-      width: 100%;
-      height: 50px;
-      bottom: -3px;
-      z-index: -1;
-      filter: drop-shadow(8px 8px 10px black);
     }
     .home_logo_container
     {
@@ -86,79 +95,108 @@
       max-width: 180px;
     }
 
-
-    .ball {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background-color: #FF5722;
-
-      animation: bounce 0.5s;
-      animation-direction: alternate;
-      animation-timing-function: cubic-bezier(.5,0.05,1,.5);
-      animation-iteration-count: infinite;
+    .carousel {
+      background: #EEE;
     }
 
-    @keyframes bounce {
-      from { transform: translate3d(0, 0, 0);     }
-      to   { transform: translate3d(0, 200px, 0); }
+    .carousel img {
+      display: block;
+      height: 200px;
     }
 
-    /* Prefix Support */
-    ball {
-      -webkit-animation-name: bounce;
-      -webkit-animation-duration: 0.5s;
-      -webkit-animation-direction: alternate;
-      -webkit-animation-timing-function: cubic-bezier(.5,0.05,1,.5);
-      -webkit-animation-iteration-count: infinite;
+    .carousel-cell p
+    {
+      padding: 5px;
     }
 
-    @-webkit-keyframes bounce {
-      from { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
-      to   { -webkit-transform: translate3d(0, 200px, 0); transform: translate3d(0, 200px, 0); }
+    .carousel-cell h5
+    {
+      padding: 5px;
+    }
+    @media screen and ( min-width: 768px ) {
+      .carousel img {
+        height: 400px;
+      }
+    }
+
+    .card {
+      color: #000;
+      border-radius: 4px;
+      margin: 20px auto;
+      position: relative;
+      padding: 30px;
+    }
+    .card:before {
+      content: "";
+      display: block;
+      position: absolute;
+      background-color: #FFF;
+      left: 20px;
+      right: 20px;
+      bottom: 0;
+      top: 50%;
+      z-index: -1;
+      box-shadow: 0 0 10px #999999;
+      transition: box-shadow 0.2s ease-in-out;
+    }
+    .card.level-3:hover:before {
+      box-shadow: 0 0 80px #999999;
+    }
+    .list-group-item
+    {
+      padding: 5px;
+    }
+    .list-group-item-light.list-group-item-action.active
+    {
+      background-color: #343d46;
     }
     </style>
 </head>
 
-<body id="mainBody" style="visibility: hidden;">
-  <ul class="nav justify-content-between navbar-signup d-none">
-    <li class="nav-item">
-      <a class="nav-link text-dark trn" href="javascript:;">{register}</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link text-dark trn" href="javascript:;">{login}</a>
-    </li>
-    <li class="nav-item dropdown dropleft">
+<body id="mainBody">
+  <header class="header-sticky" id="navigation-lang">
+  <ul class="nav justify-content-between navbar-signup">
+    <li class="nav-item dropdown dropright">
       <a class="nav-link text-dark dropdown-toggle trn" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{lang}</a>
       <div class="dropdown-menu">
-        <a class="dropdown-item text-center" id="btnLangSwitcherBM" data-lang="bm" href="javascript:void(0);">Malaysia</a>
+        <!-- <a class="dropdown-item text-center" id="btnLangSwitcherBM" data-lang="bm" href="javascript:void(0);">Malaysia</a> -->
         <a class="dropdown-item text-center" id="btnLangSwitcherEN" data-lang="en" href="javascript:void(0);">English</a>
         <a class="dropdown-item text-center" id="btnLangSwitcherCN" data-lang="cn" href="javascript:void(0);">中文</a>
       </div>
     </li>
+
+    <li class="nav-item  showOnScroll" role="presentation"><a class="nav-link text-dark" href="#intro"><i class=" mr-1 fas fa-landmark"></i><span class="trn">{intro}</span></a></li>
+    <li class="nav-item  showOnScroll" role="presentation"><a class="nav-link text-dark" href="#news"><i class=" mr-1 fas fa-newspaper"></i><span class="trn">{news}</span></a></li>
+    <li class="nav-item  showOnScroll" role="presentation"><a class="nav-link text-dark" href="#lists"><i class=" mr-1 fas fa-users"></i><span class="trn">{lists}</span></a></li>
+    <li class="nav-item  showOnScroll" role="presentation"><a class="nav-link text-dark" href="#contact"><i class=" mr-1 fas fa-headset"></i><span class="trn">{contact}</span></a></li>
+
+    <li class="nav-item">
+      <a class="nav-link text-dark" href="http://bit.ly/SECA_NEW_MEMBER" target="_blank"><i class=" mr-1 fas fa-link"></i><span class="trn">{register}</span></a>
+    </li>
+    <!-- <li class="nav-item d-none">
+      <a class="nav-link text-dark trn" href="javascript:;">{login}</a>
+    </li> -->
   </ul>
-  <header class="header-sticky">
+  </header>
+  <header>
     <nav class="navbar navbar-light navbar-expand-md" id="navigation">
       <div class="container-fluid">
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <a class="d-block d-sm-block d-md-none d-none d-md-block d-lg-none" href="https://www.seca.org.my/introduction"><img style="width:64px;height:64px;" src="https://www.seca.org.my/assets/img/SECA_SQ_LOGO.png?1" /></a>
         <div class="collapse navbar-collapse" id="navcol-1">
           <ul id="ul-menu" class="nav navbar-nav d-flex " style="justify-content: space-evenly!important;">
-            <li class="nav-item" role="presentation"><a class="nav-link trn" href="https://www.seca.org.my/intro">{intro}</a></li>
-            <!--li class="nav-item" role="presentation"><a class="nav-link trn" href="https://www.seca.org.my/events">{schedule}</a></li-->
-            <li class="nav-item" role="presentation" id="nav_home"><a class="nav-link home_logo_container" href="https://www.seca.org.my/"><img id="home_logo_xl" class="home_logo_xl" src="https://www.seca.org.my/assets/img/head_logo.jpg?1" /></a></li>
-            <!--li class="nav-item" role="presentation"><a class="nav-link trn" href="https://www.seca.org.my/members">{members}</a></li-->
-            <li class="nav-item" role="presentation"><a class="nav-link trn" href="https://www.seca.org.my/contact">{contact}</a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link" href="#intro"><i class=" mr-1 fas fa-landmark"></i><span class="trn">{intro}</span></a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link" href="#news"><i class=" mr-1 fas fa-newspaper"></i><span class="trn">{news}</span></a></li>
+            <li class="nav-item" role="presentation" id="nav_home"><a class="nav-link home_logo_container" href="javascript:;"><img id="home_logo_xl" class="home_logo_xl" src="https://www.seca.org.my/assets/img/head_logo.jpg?1" /></a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link" href="#lists"><i class=" mr-1 fas fa-users"></i><span class="trn">{lists}</span></a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link" href="#contact"><i class=" mr-1 fas fa-headset"></i><span class="trn">{contact}</span></a></li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
-  <div id="div-jumbotron" class="jumbotron mt-2" style="border-radius:0px;">
-    <!--h1 class="text-white">转型.成长</h1>
-        <p class="text-white">Transforming a Survival Mindset to a Thrive Mindset.</p-->
-  </div>
-  <div class="container-fluid" style="overflow:hidden;max-height:350px;padding:0px;margin:30px 0px;display:none;">
+  <div id="div-jumbotron" class="jumbotron mt-2" style="border-radius:0px;"></div>
+  <div class="container-fluid d-none" style="overflow:hidden;height:100vh;;padding:0px;margin:30px 0px;">
     <div class="row mb-5">
       <div class="col">
         <ul id="ul-menu-subheader" class="nav navbar-nav d-flex " style="justify-content: space-evenly!important;">
@@ -171,82 +209,162 @@
       </div>
     </div>
   </div>
-  <div class="container article">
+  <div class="container article" id="intro" style="height:100vh;padding-top:120px;margin-bottom:20px;">
     <div class="row">
-      <div class="col-md-6 col-xs-12">
-        <h1>About Association</h1>
+      <div class="col-md-12 col-xs-12">
+        <div class="lang-en">
+        <h1 class="text-center">About Association</h1>
         <br />
         <p class="text-justify">On May 26, 2017, the Sarawak E-commerce Association officially obtained a license from the government registry. At the beginning of the establishment of this association, five major founding purposes were established:</p>
-        <p class="text-justify">1. Become a bridge between members and the government</p>
-        <p class="text-justify">2. Assist in entrepreneurship/employment opportunities</p>
-        <p class="text-justify">3. Create a shared platform</p>
-        <p class="text-justify">4. Data collection</p>
-        <p class="text-justify">5. Education</p>
+        <h5 class="text-justify">1. Become a bridge between members and the government</h5>
+        <h5 class="text-justify">2. Assist in entrepreneurship/employment opportunities</h5>
+        <h5 class="text-justify">3. Create a shared platform</h5>
+        <h5 class="text-justify">4. Data collection</h5>
+        <h5 class="text-justify">5. Education</h5>
+        <br/>
         <p class="text-justify">These five major objectives are also the work indicators of the Association. We organize various related courses and symposiums and conduct knowledge education and training for the public. Create an e-commerce
           environment belonging to Sarawak and connect with domestic and foreign e-commerce platforms. Held Sarawak e-commerce fairs, trade fairs, and other activities. Lead members to cooperate with the government to help implement relevant
           policies. Guide members on how to become a cross-border e-commerce provider and provide advice on import and export tariffs and laws.</p>
         <p class="text-justify">The Association also promotes the creation of a collaborative environment between professionals and institutions in the IT field and entrepreneurs or traditional businesses and seeks solutions to promote new business
           opportunities. In addition, this Council will collect data through the association platform to help members save more resources and deliver more accurately from the data.</p>
-        <p class="text-justify">Members of the Sarawak E-Commerce Association are divided into regular members (RM 50 annual fee) and permanent members (one-time payment RM300)</p>
-        <p class="text-justify">Contact MR.CHEW +6 016 878 8642 or email seca.org.my@gmail.com</p>
-      </div>
-      <div class="col-md-6 col-xs-12">
-        <h1>公会简介</h1>
+        <!-- <p class="text-justify">Members of the Sarawak E-Commerce Association are divided into regular members (RM 50 annual fee) and permanent members (one-time payment RM300)</p> -->
+        <!-- <p class="text-justify">Contact MR.CHEW +6 016 878 8642 or email seca.org.my@gmail.com</p> -->
+        </div>
+        <div class="lang-cn">
+        <h1 class="text-center">公会简介</h1>
         <br />
         <p class="text-justify">2017年5月26日，砂拉越电子商务公会（ Sarawak E-commerce Association）正式获得到政府注册局的执照批准。本会的创立之初便设立了五大创会宗旨：</p>
-        <p class="text-justify">1. 成为会员与政府沟通桥梁</p>
-        <p class="text-justify">2. 协助创业/就业机会</p>
-        <p class="text-justify">3. 打造共享平台</p>
-        <p class="text-justify">4. 数据采集</p>
-        <p class="text-justify">5. 教育</p>
+        <h5 class="text-justify">1. 成为会员与政府沟通桥梁</h5>
+        <h5 class="text-justify">2. 协助创业/就业机会</h5>
+        <h5 class="text-justify">3. 打造共享平台</h5>
+        <h5 class="text-justify">4. 数据采集</h5>
+        <h5 class="text-justify">5. 教育</h5>
+        <br/>
         <p class="text-justify">这5大宗旨同时也是公会的工作指标，从主办各种相关课程与座谈会，对大众进行电子商务的知识教育培训。打造属于砂拉越的电商环境并与国内外电商平台对接。举办砂拉越电子商务博览会，展销会等等活动。带领会员与政府合作，协助落实相关政策。引导会员如何成为跨境电商，提供进出口关税与法令等咨询。</p>
         <p class="text-justify">本会也推动打造IT领域的专才和机构与创业者或传统商家之间的合作环境，共谋对策，促成新商机效应。此外，本会将透过公会平台进行数据采集，以协助会员从数据中可以节省更多资源和更精准的投放。</p>
-        <p class="text-justify">砂拉越电子商务公会的会员分为普通会员（RM 50年费）和永久会员（一次性缴费RM300）</p>
-        <p class="text-justify">联系方式 MR.CHEW +6 016 878 8642 或电邮seca.org.my@gmail.com</p>
-        <div class="container-fluid" style="padding:0px;margin:30px 0px;">
-          <div class="row">
-            <div class="col-12">
-              <ul id="homeSlider">
-                <!--li>
-                              <a href="#slide1"><img src="https://www.seca.org.my/assets/img/home/slide.1.jpg"></a>
-                            </li-->
-                <li>
-                  <a href="#slide2"><img src="https://www.seca.org.my/assets/img/home/slide.2.jpg"></a>
-                </li>
-                <li>
-                  <a href="#slide3"><img src="https://www.seca.org.my/assets/img/home/slide.3.jpg"></a>
-                </li>
-                <li>
-                  <a href="#slide3"><img src="https://www.seca.org.my/assets/img/home/slide.4.jpg"></a>
-                </li>
-                <li>
-                  <a href="#slide3"><img src="https://www.seca.org.my/assets/img/home/slide.5.jpg"></a>
-                </li>
-                <!--li>
-                              <a href="#slide3"><img src="https://www.seca.org.my/assets/img/home/slide.6.jpg"></a>
-                            </li-->
-                <li>
-                  <a href="#slide3"><img src="https://www.seca.org.my/assets/img/home/slide.7.jpg"></a>
-                </li>
-                <!--li>
-                              <a href="#slide3"><img src="https://www.seca.org.my/assets/img/home/slide.8.jpg"></a>
-                            </li-->
-                <li>
-                  <a href="#slide3"><img src="https://www.seca.org.my/assets/img/home/slide.9.jpg"></a>
-                </li>
-                <li>
-                  <a href="#slide3"><img src="https://www.seca.org.my/assets/img/home/slide.10.jpg"></a>
-                </li>
-                <li>
-                  <a href="#slide3"><img src="https://www.seca.org.my/assets/img/home/slide.11.jpg"></a>
-                </li>
-                <li>
-                  <a href="#slide3"><img src="https://www.seca.org.my/assets/img/home/slide.12.jpg"></a>
-                </li>
-              </ul>
+        <!-- <p class="text-justify">砂拉越电子商务公会的会员分为普通会员（RM 50年费）和永久会员（一次性缴费RM300）</p> -->
+        <!-- <p class="text-justify">联系方式 MR.CHEW +6 016 878 8642 或电邮seca.org.my@gmail.com</p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container news" id="news" style="height:100vh;padding-top:120px;margin-bottom:20px;">
+    <div class="row">
+      <div class="col-md-12 col-xs-12">
+
+            <h1 class="text-center trn">{news}</h1>
+            <br />
+            <div class="row">
+              <div class="col-2">
+                <div class="list-group" id="list-tab" role="tablist">
+                  <a class="list-group-item list-group-item-action list-group-item-light trn text-center active" id="list-education-list" data-toggle="list" href="#list-education" role="tab" aria-controls="education">{education}</a>
+                  <a class="list-group-item list-group-item-action list-group-item-light trn text-center" id="list-exhibition-list" data-toggle="list" href="#list-exhibition" role="tab" aria-controls="exhibition">{exhibition}</a>
+                  <a class="list-group-item list-group-item-action list-group-item-light trn text-center" id="list-seminar-list" data-toggle="list" href="#list-seminar" role="tab" aria-controls="seminar">{seminar}</a>
+                </div>
+              </div>
+              <div class="col-10">
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="list-education" role="tabpanel" aria-labelledby="list-education-list">
+
+  <div id="divRss"></div>
+
+
+                      <div class="main-carousel mb-5">
+                        <div class="carousel-cell">
+                          <img src="news/cover.1.jpeg?1" class="responsive-image carousel-cell-image">
+                          <h5>SBF</h5>
+                          <p>Taken on River side.
+                          </p>
+                        </div>
+                        <div class="carousel-cell">
+                          <img src="news/cover.2.jpeg?1" class="responsive-image carousel-cell-image">
+                          <h5>SBF</h5>
+                          <p>Taken on River side.
+                          </p>
+                        </div>
+                        <div class="carousel-cell">
+                          <img src="news/cover.2.jpeg?1" class="responsive-image carousel-cell-image">
+                          <h5>SBF</h5>
+                          <p>Taken on River side.
+                          </p>
+                        </div>
+                        <div class="carousel-cell">
+                          <img src="news/cover.3.jpeg?1" class="responsive-image carousel-cell-image">
+                          <h5>SBF</h5>
+                          <p>Taken on River side.
+                          </p>
+                        </div>
+                        <div class="carousel-cell">
+                          <img src="news/cover.5.jpeg?1" class="responsive-image carousel-cell-image">
+                          <h5>SBF</h5>
+                          <p>Taken on River side.
+                          </p>
+                        </div>
+                        <div class="carousel-cell">
+                          <img src="news/cover.6.jpeg?1" class="responsive-image carousel-cell-image">
+                          <h5>SBF</h5>
+                          <p>Taken on River side.
+                          </p>
+                        </div>
+                        <div class="carousel-cell">
+                          <img src="news/cover.7.jpeg?1" class="responsive-image carousel-cell-image">
+                          <h5>SBF</h5>
+                          <p>Taken on River side.
+                          </p>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="tab-pane fade" id="list-exhibition" role="tabpanel" aria-labelledby="list-exhibition-list">
+                      <div class="lang-cn">ex cn</div>
+                      <div class="lang-en">ex en</div>
+                  </div>
+                  <div class="tab-pane fade" id="list-seminar" role="tabpanel" aria-labelledby="list-seminar-list">
+                      <div class="lang-cn">se cn</div>
+                      <div class="lang-en">se en</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+      </div>
+
+    </div>
+  </div>
+  <div class="container-fluid contact" id="contact" style="height:100vh;padding-top:120px;background:url('seca.map.final.jpg');background-size:cover;">
+    <div class="row">
+      <div class="col">
+
+        <div class="card level-3" style="max-width:360px;">
+            <h1 class="text-center trn">{contact}</h1>
+            <br />
+            <div class="lang-cn">
+              <p class="text-center">砂拉越电子商务公会的会员分为:<p>
+              <h5 class="text-center">普通会员（RM 50年费)</h5>
+              <h5 class="text-center">永久会员（RM300一次性缴费)</h5>
+              <br /><br />
+              <p class="text-center">联系方式:</p>
+              <h5 class="text-center text-bold">Mr.Chew +6 016 878 8642</h5>
+              <h5 class="text-center text-bold">seca.org.my@gmail.com</h5>
+              <br /><br />
+              <p class="text-center">地址:</p>
+              <h5 class="text-center text-bold">No.2, 1st Floor, Lorong Igan 4A 96000 Sibu, Sarawak.</h5>
+              <br /><br />
+            </div>
+            <div class="lang-en">
+              <p class="text-center">SECA membership:<p>
+              <h5 class="text-center">Regular membership（RM 50 annual fee)</h5>
+              <h5 class="text-center">Permanent membership（RM300 one time fee)</h5>
+              <br /><br />
+              <p class="text-center">Contact:</p>
+              <h5 class="text-center text-bold">Mr.Chew +6 016 878 8642</h5>
+              <h5 class="text-center text-bold">seca.org.my@gmail.com</h5>
+              <br /><br />
+              <p class="text-center">Address:</p>
+              <h5 class="text-center text-bold">No.2, 1st Floor, Lorong Igan 4A 96000 Sibu, Sarawak.</h5>
+              <br /><br />
             </div>
           </div>
-        </div>
+
       </div>
     </div>
   </div>
@@ -272,15 +390,15 @@
       });
     });
   </script>
-  <footer class="footer_background p-4">
+  <footer class="footer_background p-4 d-none">
     <ul id="ul-menu-footer" class="nav navbar-nav d-flex " style="justify-content: space-evenly!important;">
       <!--li class="nav-item" role="presentation"><a class="text-black nav-link trn" id="a_faq" target="_blank" href="https://www.seca.org.my/faq">{faq}</a></li-->
-      <li class="nav-item" role="presentation"><a class="text-black nav-link trn" id="a_tnc" href="javascript:;">{faq}</a></li>
       <li class="nav-item" role="presentation"><a class="text-black nav-link trn" id="a_tnc" href="javascript:;">{tnc}</a></li>
       <li class="nav-item" role="presentation"><a class="text-black nav-link trn" id="a_privacy" href="javascript:;">{privacy}</a></li>
       <li class="nav-item" role="presentation"><a class="text-black nav-link trn" id="a_copyrights" href="javascript:;">{copyrights}</a></li>
     </ul>
   </footer>
+  <a href="javascript:void(0);" id="back-top" class="text-bold"><i class=" m-1 fas fa-arrow-up"></i></a>
   <style>
     html, body
     {
@@ -349,13 +467,6 @@
     {
         color: red;
     }
-    .navbar-light
-    {
-      /*
-      background: rgb(0,48,80) !important;
-      background: linear-gradient(180deg, rgba(0,48,80,1) 0%, rgba(0,48,80,1) 6%, rgba(0,38,68,1) 100%) !important;
-      */
-    }
     *:before,
     *:after {
       box-sizing: border-box;
@@ -414,7 +525,7 @@
       background-position: center center;
       background-repeat: no-repeat;
       background-attachment: fixed;
-      min-height: 150px;
+      /* min-height: 150px; */
       overflow: auto;
     }
     .footer_background a
@@ -430,16 +541,17 @@
     {
       color: #FD7E14 !important;
     }
-    #home_logo_container
+    #home_logo_container, #back-top, .showOnScroll
     {
       display: none;
     }
     .responsive-image
     {
-      display: block;
-      width: 100%;
-      height: auto;
-      margin: auto;
+      max-width: 360px;
+    }
+    #navigation
+    {
+      margin-top: 20px;
     }
     #navigation,
     .home_logo_xl
@@ -449,6 +561,11 @@
       transition-timing-function: linear;
       transition-delay: 1s;
     }
+    .nav-shadow
+    {
+      box-shadow: 0px 0px 15px 2px #AAA;
+    }
+
     /* Smartphones (portrait and landscape) ----------- */
     @media (min-width : 320px)
     and (max-width : 480px) {
@@ -462,6 +579,10 @@
     /* Smartphones (landscape) ----------- */
     @media (min-width : 331px) {
     /* Styles */
+        #navigation
+        {
+          margin-top: 40px;
+        }
         #home_logo_container
         {
           display: block;
@@ -594,10 +715,6 @@
     /* Styles */
     }
 
-
-
-
-
     @media (max-width: 800px)
     {
         #home_logo_container
@@ -663,20 +780,32 @@
   <script src="https://www.seca.org.my/assets/datepicker/bootstrap-datepicker.min.js"></script>
   <script src="https://www.seca.org.my/assets/jquery.sticky-kit.min.js"></script>
   <script src="https://www.seca.org.my/assets/script.min.js"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
   <script src="https://www.seca.org.my/assets/jquery.translate.js"></script>
-  <script src="https://www.seca.org.my/assets/lang-bm.js?1544402156"></script>
+  <script src="lang-bm.js?1544402156"></script>
   <script type="text/javascript">
     $(document).ready(function() {
 
-      // var options = {
-      //   classname: 'my-class',
-      //   id: 'loadingbar',
-      //   target: document.getElementById('loadingbar')
-      // };
-      // var nanobar = new Nanobar( options );
-      // nanobar.go( 30 ); // size bar 30%
-      // nanobar.go( 76 ); // size bar 76%
-      // nanobar.go(100); // size bar 100% and and finish
+      // Optimalisation: Store the references outside the event handler:
+      var $window = $(window);
+
+      function checkWidth() {
+          var windowsize = $window.width();
+          if (windowsize > 1000) {
+              // $('.showOnScroll').show();
+              return true;
+          }else{
+              // $('.showOnScroll').hide();
+              return false;
+          }
+      }
+      // Execute on load
+      var widthStatus = checkWidth();
+      // Bind event listener
+      $(window).resize(checkWidth);
 
 
       $('.lang-bm').hide();
@@ -706,6 +835,9 @@
       });
 
 
+      $('#divRss').FeedEk({
+      FeedUrl:'https://news.seca.org.my/feeds/posts/default'
+      });
 
 
       $('#btnLangSwitcher').on('click', function() {
@@ -769,31 +901,74 @@
       }
       // When everthing done loaded
       $('#mainBody').fadeIn();
-      $('#mainBody').animate({
-        opacity: 1
-      }, 'fast', function() {
-        $('#mainBody').css('visibility', 'visible');
-      });
+      // $('#mainBody').animate({
+      //   opacity: 1
+      // }, 'slow', function() {
+      //   $('#mainBody').css('visibility', 'visible');
+      // });
       /* ========================================================================= */
       /*  Navigation background on scroll
       /* ========================================================================= */
       $(window).scroll(function() {
-        if ($(document).scrollTop() > 200) {
-          $("#navigation").css("min-height", "50px");
-          $(".home_logo_xl").css({
-            "max-width": "100px",
-            "margin-left": "-50px",
-            "top": "-20px",
-          });
+        if ($(document).scrollTop() > 100) {
+          // $("#navigation").css("min-height", "50px");
+          // $("#navigation-lang").addClass('nav-shadow');
+          // $(".home_logo_xl").css({
+          //   "max-width": "100px",
+          //   "margin-left": "-50px",
+          //   "top": "-20px",
+          // });
         } else {
-          $("#navigation").css("min-height", "150px");
-          $(".home_logo_xl").css({
-            "max-width": "180px",
-            "margin-left": "-90px",
-            "top": "-40px",
-          });
+          // $("#navigation").css("min-height", "150px");
+          // $("#navigation-lang").removeClass('nav-shadow');
+          // $(".home_logo_xl").css({
+          //   "max-width": "180px",
+          //   "margin-left": "-90px",
+          //   "top": "-40px",
+          // });
         }
       });
+      /* ========================================================================= */
+      /*	Back to Top
+      /* ========================================================================= */
+      $(window).scroll(function () {
+
+          if ($(window).scrollTop() > 200)
+          {
+              $("#back-top").fadeIn('fast');
+          } else {
+              $("#back-top").fadeOut('fast');
+          }
+          if( checkWidth() )
+          {
+            if ($(window).scrollTop() > 200)
+            {
+                $(".showOnScroll").fadeIn('fast');
+            } else {
+                $(".showOnScroll").fadeOut('fast');
+            }
+          }
+          // if (windowsize > 1000) {
+              // $('.showOnScroll').show();
+      });
+      $("#back-top").click(function () {
+          $("html, body").stop().animate({
+              scrollTop: 0
+          }, 500, "linear")
+      });
+      /* ========================================================================= */
+      /*	Section Gallery
+      /* ========================================================================= */
+      var $carousel = $('.main-carousel').flickity({
+          prevNextButtons: false,
+          autoPlay: true,
+          autoPlay: 1500,
+          cellAlign: 'left',
+          contain: true,
+          wrapAround: true
+      });
+
+
 
     });
   </script>
