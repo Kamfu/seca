@@ -14,6 +14,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
   <link rel="stylesheet" href="https://www.seca.org.my/assets/fancybox/jquery.fancybox.min.css">
 
   <link rel="icon" type="image/png" href="https://www.seca.org.my/assets/img/SECA_SQ_LOGO.png">
@@ -255,72 +259,63 @@
             <h1 class="text-center trn">{news}</h1>
             <br />
             <div class="row">
-              <div class="col-2">
+              <!-- <div class="col-2">
                 <div class="list-group" id="list-tab" role="tablist">
-                  <a class="list-group-item list-group-item-action list-group-item-light trn text-center active" id="list-education-list" data-toggle="list" href="#list-education" role="tab" aria-controls="education">{education}</a>
-                  <a class="list-group-item list-group-item-action list-group-item-light trn text-center" id="list-exhibition-list" data-toggle="list" href="#list-exhibition" role="tab" aria-controls="exhibition">{exhibition}</a>
-                  <a class="list-group-item list-group-item-action list-group-item-light trn text-center" id="list-seminar-list" data-toggle="list" href="#list-seminar" role="tab" aria-controls="seminar">{seminar}</a>
+                  <a id="tab-edu" class="list-group-item list-group-item-action list-group-item-light trn text-center active" id="list-education-list" data-toggle="list" href="#list-education" role="tab" aria-controls="education">{education}</a>
+                  <a id="tab-ex" class="list-group-item list-group-item-action list-group-item-light trn text-center" id="list-exhibition-list" data-toggle="list" href="#list-exhibition" role="tab" aria-controls="exhibition">{exhibition}</a>
+                  <a id="tab-comm" class="list-group-item list-group-item-action list-group-item-light trn text-center" id="list-seminar-list" data-toggle="list" href="#list-seminar" role="tab" aria-controls="seminar">{seminar}</a>
                 </div>
-              </div>
-              <div class="col-10">
+              </div> -->
+              <div class="col-12">
                 <div class="tab-content" id="nav-tabContent">
                   <div class="tab-pane fade show active" id="list-education" role="tabpanel" aria-labelledby="list-education-list">
 
-  <div id="divRss"></div>
+  <!-- <div id="divRss"></div> -->
 
-
-                      <div class="main-carousel mb-5">
+                      <div class="main-carousel-edu mb-5">
+                        <div class="carousel-cell">
+                          <img src="news/cover.7.jpeg?1" class="responsive-image carousel-cell-image">
+                        </div>
+                        <div class="carousel-cell">
+                          <img src="news/cover.8.jpeg?1" class="responsive-image carousel-cell-image">
+                        </div>
+                      <!-- </div>
+                      <div class="main-carousel-ex mb-5"> -->
                         <div class="carousel-cell">
                           <img src="news/cover.1.jpeg?1" class="responsive-image carousel-cell-image">
-                          <h5>SBF</h5>
-                          <p>Taken on River side.
-                          </p>
                         </div>
                         <div class="carousel-cell">
                           <img src="news/cover.2.jpeg?1" class="responsive-image carousel-cell-image">
-                          <h5>SBF</h5>
-                          <p>Taken on River side.
-                          </p>
-                        </div>
-                        <div class="carousel-cell">
-                          <img src="news/cover.2.jpeg?1" class="responsive-image carousel-cell-image">
-                          <h5>SBF</h5>
-                          <p>Taken on River side.
-                          </p>
+
                         </div>
                         <div class="carousel-cell">
                           <img src="news/cover.3.jpeg?1" class="responsive-image carousel-cell-image">
-                          <h5>SBF</h5>
-                          <p>Taken on River side.
-                          </p>
+
                         </div>
+
+                      <!-- </div>
+                      <div class="main-carousel-comm mb-5"> -->
+
                         <div class="carousel-cell">
                           <img src="news/cover.5.jpeg?1" class="responsive-image carousel-cell-image">
-                          <h5>SBF</h5>
-                          <p>Taken on River side.
-                          </p>
+
                         </div>
                         <div class="carousel-cell">
                           <img src="news/cover.6.jpeg?1" class="responsive-image carousel-cell-image">
-                          <h5>SBF</h5>
-                          <p>Taken on River side.
-                          </p>
                         </div>
-                        <div class="carousel-cell">
-                          <img src="news/cover.7.jpeg?1" class="responsive-image carousel-cell-image">
-                          <h5>SBF</h5>
-                          <p>Taken on River side.
-                          </p>
-                        </div>
+
                       </div>
+
+
+
+
+
                   </div>
                   <div class="tab-pane fade" id="list-exhibition" role="tabpanel" aria-labelledby="list-exhibition-list">
-                      <div class="lang-cn">ex cn</div>
-                      <div class="lang-en">ex en</div>
+
                   </div>
                   <div class="tab-pane fade" id="list-seminar" role="tabpanel" aria-labelledby="list-seminar-list">
-                      <div class="lang-cn">se cn</div>
-                      <div class="lang-en">se en</div>
+
                   </div>
                 </div>
               </div>
@@ -835,9 +830,17 @@
       });
 
 
-      $('#divRss').FeedEk({
-      FeedUrl:'https://news.seca.org.my/feeds/posts/default'
-      });
+      // $('#divRss').FeedEk({
+      // FeedUrl:'https://news.seca.org.my/feeds/posts/default'
+      // });
+      // $('#divRss').FeedEk({
+      // FeedUrl:'http://jquery-plugins.net/rss',
+      // MaxCount : 5,
+      // ShowDesc : true,
+      // ShowPubDate:true,
+      // DescCharacterLimit:100,
+      // TitleLinkTarget:'_blank',
+      // });
 
 
       $('#btnLangSwitcher').on('click', function() {
@@ -959,14 +962,40 @@
       /* ========================================================================= */
       /*	Section Gallery
       /* ========================================================================= */
-      var $carousel = $('.main-carousel').flickity({
-          prevNextButtons: false,
-          autoPlay: true,
-          autoPlay: 1500,
-          cellAlign: 'left',
-          contain: true,
-          wrapAround: true
-      });
+        $('#tab-edu').click(function(){});
+        $('#tab-ex').click(function(){
+
+        });
+        $('#tab-comm').click(function(){
+
+        });
+        $('.main-carousel-edu').bxSlider();
+// $('.main-carousel-comm').bxSlider();
+// $('.main-carousel-ex').bxSlider();
+      // $('.main-carousel-edu').flickity({
+      //     prevNextButtons: false,
+      //     autoPlay: true,
+      //     autoPlay: 1500,
+      //     cellAlign: 'left',
+      //     contain: true,
+      //     wrapAround: true
+      // });
+      // $('.main-carousel-ex').flickity({
+      //     prevNextButtons: false,
+      //     autoPlay: true,
+      //     autoPlay: 1500,
+      //     cellAlign: 'left',
+      //     contain: true,
+      //     wrapAround: true
+      // });
+      // $('.main-carousel-comm').flickity({
+      //     prevNextButtons: false,
+      //     autoPlay: true,
+      //     autoPlay: 1500,
+      //     cellAlign: 'left',
+      //     contain: true,
+      //     wrapAround: true
+      // });
 
 
 
