@@ -56,6 +56,7 @@
     {
       font-size: 18px;
     }
+    #mainBody { display:none; }
     #back-top {
         bottom: 20px;
         position: fixed;
@@ -186,7 +187,7 @@
     <nav class="navbar navbar-light navbar-expand-md" id="navigation">
       <div class="container-fluid">
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-        <a class="d-block d-sm-block d-md-none d-none d-md-block d-lg-none" href="https://www.seca.org.my/introduction"><img style="width:64px;height:64px;" src="SECA_SQ_LOGO.png?1" /></a>
+        <a class="d-block d-sm-block d-md-none d-none d-md-block d-lg-none" href="javascript:;"><img style="width:64px;height:64px;" src="SECA_SQ_LOGO.png?1" /></a>
         <div class="collapse navbar-collapse" id="navcol-1">
           <ul id="ul-menu" class="nav navbar-nav d-flex " style="justify-content: space-evenly!important;">
             <li class="nav-item" role="presentation"><a class="nav-link" href="#intro"><i class=" mr-1 fas fa-landmark"></i><span class="trn">{intro}</span></a></li>
@@ -520,7 +521,8 @@
     }
     .responsive-image
     {
-      max-width: 360px;
+      max-width: 100%;
+      margin: 0px auto;
     }
     #navigation
     {
@@ -748,12 +750,6 @@
             }
     }
     </style>
-  <!-- <script src="https://www.seca.org.my/assets/dataTables/datatables.min.js"></script>
-  <script src="https://www.seca.org.my/assets/fancybox/jquery.fancybox.min.js"></script>
-  <script src="https://www.seca.org.my/assets/datepicker/bootstrap-datepicker.min.js"></script>
-  <script src="https://www.seca.org.my/assets/jquery.sticky-kit.min.js"></script>
-  <script src="https://www.seca.org.my/assets/script.min.js"></script> -->
-
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
