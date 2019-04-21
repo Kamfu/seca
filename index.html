@@ -17,9 +17,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
   <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-
-  <!-- <link rel="stylesheet" href="https://www.seca.org.my/assets/fancybox/jquery.fancybox.min.css"> -->
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.css" />
   <link rel="icon" type="image/png" href="SECA_SQ_LOGO.png">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/FeedEk/3.0.0/css/FeedEk.min.css" />
@@ -155,6 +153,18 @@
     {
       background-color: #343d46;
     }
+    /* Fancybox */
+    .fancybox-slide--iframe .fancybox-content {
+        width  : 100%;
+        height : 100%;
+        max-width  : 100%;
+        max-height : 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .fancybox-slide {
+        padding: 0;
+    }
     </style>
 </head>
 
@@ -176,7 +186,8 @@
     <li class="nav-item  showOnScroll" role="presentation"><a class="nav-link text-dark" href="#contact"><i class=" mr-1 fas fa-headset"></i><span class="trn">{contact}</span></a></li>
 
     <li class="nav-item">
-      <a class="nav-link text-dark" href="http://bit.ly/SECA_NEW_MEMBER" target="_blank"><i class=" mr-1 fas fa-link"></i><span class="trn">{register}</span></a>
+      <a class="nav-link text-dark" href="https://app.kamfu.app/api/seca/renew" data-fancybox data-type="iframe"><i class=" mr-1 fas fa-search"></i><span class="trn">{checkstatus}</span></a>
+      <a class="nav-link text-dark" href="http://bit.ly/SECA_NEW_MEMBER" data-fancybox data-type="iframe"><i class=" mr-1 fas fa-link"></i><span class="trn">{register}</span></a>
     </li>
     <!-- <li class="nav-item d-none">
       <a class="nav-link text-dark trn" href="javascript:;">{login}</a>
@@ -756,7 +767,7 @@
     </style>
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.js"></script>
   <script src="jquery.translate.js"></script>
   <script src="lang-bm.js?1544402156"></script>
   <script type="text/javascript">
@@ -975,6 +986,37 @@
       //     wrapAround: true
       // });
 
+
+        $('[data-fancybox]').fancybox({
+            modal: true,
+            iframe: {
+                preload: false,
+                tpl: '<iframe id="fancybox-frame" name="fancybox-frame{rnd}" class="fancybox-iframe" allowfullscreen allow="autoplay; fullscreen" src=""></iframe>',
+                css: {
+                    width: '100%',
+                    height: '100%'
+                }
+            },
+            beforeLoad: function () {
+                $('#loader').css('display','inline-block');
+                $('body').css('overflow', 'hidden');
+            },
+            afterShow: function () {
+                $('#loader').css('display','none');
+            },
+            afterClose: function () {
+                $('body').css('overflow', 'auto');
+            }
+        });
+        //respond to events
+        window.addEventListener('message', function (event) {
+            if (event.origin !== 'https://app.kamfu.app') return;
+            console.log('message received:  ' + event.data, event);
+            if (event.data == 'closefancybox') {
+                $.fancybox.close();
+            }
+            // event.source.postMessage('holla back youngin!',event.origin);
+        }, false);
 
 
     });
