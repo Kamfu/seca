@@ -14,6 +14,11 @@ var dict = {
   bm: "BAHASA",
   cn: "语言",
 },
+"{checkstatus}": {
+  en: "Check Membership Status",
+  bm: "Semak Status Keahlian",
+  cn: "检查会员状态",
+},
 "{register}": {
   en: "Register",
   bm: "Daftar",
