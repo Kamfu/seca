@@ -186,9 +186,13 @@
     <li class="nav-item  showOnScroll" role="presentation"><a class="nav-link text-dark" href="#contact"><i class=" mr-1 fas fa-headset"></i><span class="trn">{contact}</span></a></li>
 
     <li class="nav-item">
-      <a class="nav-link text-dark" href="https://app.kamfu.app/api/seca/renew" data-fancybox data-type="iframe"><i class=" mr-1 fas fa-search"></i><span class="trn">{checkstatus}</span></a>
-      <a class="nav-link text-dark" href="http://bit.ly/2GQA6vf" data-fancybox data-type="iframe"><i class=" mr-1 fas fa-link"></i><span class="trn">{register}</span></a>
-      <a class="nav-link text-dark" href="https://app.kamfu.app/seca/auth/login" data-fancybox data-type="iframe"><i class=" mr-1 fas fa-link"></i><span class="trn">{login}</span></a>
+      <a class="nav-link text-dark dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item text-center" data-lang="en" href="https://app.kamfu.app/api/seca/renew"><i class=" mr-1 fas fa-search"></i><span class="trn">{checkstatus}</span></a>
+        <a class="dropdown-item text-center" data-lang="cn" href="http://bit.ly/2GQA6vf"><i class=" mr-1 fas fa-link"></i><span class="trn">{register}</span></a>
+        <a class="dropdown-item text-center" data-lang="cn" href="https://app.kamfu.app/seca/auth/login"><i class=" mr-1 fas fa-link"></i><span class="trn">{login}</span></a>
+      </div>
+
     </li>
   </ul>
   </header>
